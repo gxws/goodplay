@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    block title
+      title title
+    include ../public/_header
+  block tag
+    - var tag = 0
+  - var css=['','difference','difference-game','pounds','pounds-game','difference-gamedescription','announcement','my-account','deposit-succeed','deposit-fail','bg-404','bg-500']
+  body.wrap(class= css[tag])
+    block head
+      .header
+        .pa.logo
+          img(src="../static/images/logo.png")
+        block logotitle
+          .pa.title
+            img(src="")
+        block announcement
+        block nav
+          a.pa.navbtn.navbtn-home(href="#")
+          a.pa.navbtn.navbtn-index(href="#")
+          a.pa.navbtn.navbtn-back(href="#")
+          .pa.date.tc.text-white.J_j_date 2015|8|6|4|23|59|55
+          //年|月|日|星期|时|分|秒
+    block container
+      .container
+    block balance
+      .pa.balance.text-white 4540.00
+    script(src="../../static/public/js/jquery.min.js")
+    script(src="../static/js/base.js")
+    block script

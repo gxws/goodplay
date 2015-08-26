@@ -1,0 +1,22 @@
+extends ../public/_layout
+block title
+  title 2-0来找茬游戏说明
+block tag
+  - var tag=5;
+block head
+block container
+  .pa.time-bx
+    img#time_nb.pa(src="../static/images/time_nb.png" width="87" height="670")
+  a.pa.btn.play-game(href="#") 开始游戏
+block balance
+block script
+  script.
+    var time=null;
+    (function(window,undefined){
+      $('#time_nb').animate({
+        top: 0
+      },10000,'linear');
+      time = setInterval(function(){
+        location.href='j_06.html'
+      },11000);
+    })(window)

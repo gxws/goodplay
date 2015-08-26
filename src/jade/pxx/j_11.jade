@@ -1,0 +1,19 @@
+extends ../public/_layout
+block title
+  title 4我的口袋-存入结果页-成功
+block tag
+  - var tag=8;
+block logotitle
+  .pa.title
+    img(src="../static/images/my-account_title.png")
+block container
+  .pa.deposit-status
+    block depositstatus
+     | 存入成功！
+  .pa.deposit-info
+    block deposit-info
+      p 存入金额：4540.00元
+      p 存入时间：15/06/25 16:14
+
+  a.pa.btn.depositbtn.J_focus(href="#") 返回口袋
+block script

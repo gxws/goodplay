@@ -1,0 +1,758 @@
+
+@media (min-width:1280px){
+	.wrap{
+		width:1280px;
+		height:720px;
+		background:url(../images/index_bg.png) 0 0 no-repeat;
+		&.difference{
+			background:url(../images/bg1.jpg) 0 0 no-repeat;
+		}
+		&.difference-game{
+			background:url(../images/bg3.jpg) 0 0 no-repeat;
+		}
+		&.difference-gamedescription{
+			background:url(../images/bg5.jpg) 0 0 no-repeat;
+			position:relative;
+			&:after{
+				display:block;
+				content:" ";
+				position:absolute;
+				width:273px;
+				height:273px;
+				background:url(../images/countdown_bg.png) 0 0 no-repeat;
+				left:955px;
+				top:123px;
+				z-index:0;
+			}
+		}
+		&.pounds{
+			background:url(../images/bg2.jpg) 0 0 no-repeat;
+		}
+		&.pounds-game{
+			background:url(../images/bg4.jpg) 0 0 no-repeat;
+		}
+		&.announcement{
+			background:url(../images/bg6.jpg) 0 0 no-repeat;
+		}
+		&.my-account{
+			background:url(../images/bg7.jpg) 0 0 no-repeat;
+		}
+		&.deposit-succeed{
+			background:url(../images/bg8.jpg) 0 0 no-repeat;
+		}
+		&.deposit-fail{
+			background:url(../images/bg9.jpg) 0 0 no-repeat;
+		}
+		&.bg-404{
+			background:url(../images/404.jpg) 0 0 no-repeat;
+		}
+		&.bg-500{
+			background:url(../images/500.jpg) 0 0 no-repeat;
+		}
+	}
+	.logo{
+		left:51px;
+		top:36px;
+	}
+	.title{
+		left:268px;
+		top:73px;
+	}
+	.navbtn{
+		width:106px;
+		height:100px;
+		background:url(../images/nav_btn.png) 20px 20px no-repeat;
+		top:27px;
+		&:after{
+			content:" ";
+			position:absolute;
+			width:66px;
+			height:60px;
+			left:20px;
+			top:20px;
+		}
+		&.navbtn-announcement{
+			left:625px;
+			&:after{
+				background:url(../images/nav_announcement.png);
+			}
+			.new-tag{
+				display:block;
+				width:60px;
+				height:30px;
+				background:url(../images/nav_announcement_tag.png);
+				left:-40px;
+				top:20px;
+			}
+		}
+		&.navbtn-home{
+			left:801px;
+			&:after{
+				background:url(../images/nav_home.png);
+			}
+		}
+		&.navbtn-index{
+			left:889px;
+			&:after{
+				background:url(../images/nav_index.png);
+			}
+		}
+		&.navbtn-back{
+			left:977px;
+			&:after{
+				background:url(../images/nav_back.png);
+			}
+		}
+		&.navbtn-wallet{
+			left:713px;
+			&:after{
+				background:url(../images/nav_wallet.png);
+			}
+		}
+		&:focus{
+			background:url(../images/nav_btn_focus.png) 0 0 no-repeat;
+			&.navbtn-announcement{
+				&:after{
+					background:url(../images/nav_announcement_focus.png);
+				}
+			}
+			&.navbtn-home{
+				&:after{
+					background:url(../images/nav_home_focus.png);
+				}
+			}
+			&.navbtn-index{
+				&:after{
+					background:url(../images/nav_index_focus.png);
+				}
+			}
+			&.navbtn-back{
+				&:after{
+					background:url(../images/nav_back_focus.png);
+				}
+			}
+			&.navbtn-wallet{
+				&:after{
+					background:url(../images/nav_wallet_focus.png);
+				}
+			}
+		}
+	}
+	.date{
+		font-size:22px;
+		width:156px;
+		left:1076px;
+		top:50px;
+	}
+	.joinbtn{
+		width:206px;
+		height:156px;
+		top:440px;
+		text-align:center;
+		background:url(../images/joinbtn.png) 0 0 no-repeat;
+		&:after,
+		&:before{
+			position:absolute;
+			content:"";
+		}
+		&:before{
+			left:0;
+			top:0;
+			width:206px;
+			height:156px;
+		}
+		&:after{
+			z-index:-1;
+		}
+		&.joinbtn-difference{
+			left:373px;
+			&:before{
+				background:url(../images/difference_text.png) 0 0 no-repeat;
+			}
+			&:after{
+				width:465px;
+				height:457px;
+				left:-277px;
+				top:-285px;
+				background:url(../images/difference.png) 0 0 no-repeat;
+			}
+		}
+		&.joinbtn-pounds{
+			left:1025px;
+			&:before{
+				background:url(../images/pounds_text.png) 0 0 no-repeat;
+			}
+			&:after{
+				width:563px;
+				height:473px;
+				left:-403px;
+				top:-284px;
+				background:url(../images/pounds.png) 0 0 no-repeat;
+			}
+		}
+		&:focus{
+			background:url(../images/joinbtn_focus.png) 0 0 no-repeat;
+			&.joinbtn-difference{
+				&:after{
+					background:url(../images/difference_focus.png) 0 0 no-repeat;
+				}
+			}&.joinbtn-pounds{
+				&:after{
+					background:url(../images/pounds_focus.png) 0 0 no-repeat;
+				}
+			}
+		}
+	}
+	.reel{
+		padding-left:70px;
+		width:864px;
+		height:49px;
+		left:50px;
+		top:635px;
+		line-height:49px;
+		font-size:24px;
+		background:url(../images/reel_bg1.png) 0 0 no-repeat;
+	}
+	.balance{
+		width:129px;
+		height:53px;
+		padding-left:77px;
+		padding-top:20px;
+		font-size:30px;
+		top:619px;
+		left:1032px;
+		background:url(../images/balance_bg.png) 0 0 no-repeat;
+	}
+	.qr-code{
+		width:396px;
+		height:411px;
+		padding-top:55px;
+		padding-left:42px;
+		left:109px;
+		top:144px;
+		background:url(../images/qr_bg.png) 0 0 no-repeat;
+		&.only{
+			left:291px;
+			top:129px;
+		}
+	}
+	.result-icon{
+		width:86px;
+		height:91px;
+		left:606px;
+		top:169px;
+		&.succeed{
+			background:url(../images/result_icon_succeed.png) 0 0 no-repeat;
+		}
+		&.fail{
+			background:url(../images/result_icon_fail.png) 0 0 no-repeat;
+		}
+		&.finished{
+			background:url(../images/result_icon_finished.png) 0 0 no-repeat;
+		}
+		&.win{
+			background:url(../images/result_icon_win.png) 0 0 no-repeat;
+		}
+	}
+	.status-text{
+		font-size:44px;
+		left:705px;
+		top:193px;
+	}
+	.info{
+		width:560px;
+		font-size:28px;
+		left:605px;
+		top:292px;
+	}
+	.btn{
+		width:240px;
+		height:95px;
+		line-height:95px;
+		text-align:center;
+		background:url(../images/btn.png) 0 0 no-repeat;
+		font-size:30px;
+		color:#910000;
+		&:focus{
+			background:url(../images/btn_focus.png) 0 0 no-repeat;
+		}
+		&.game{
+			left:594px;
+			top:369px;
+		}
+		&.play-game{
+			left:972px;
+			top:449px;
+		}
+		&.deposit{
+			left:533px;
+			top:176px;
+		}
+		&.depositbtn{
+			left:524px;
+			top:520px;
+		}
+	}
+	.info-text-bg{
+		width:496px;
+		height:33px;
+		left:606px;
+		top:509px;
+		background:url(../images/info_text.png) 0 0 no-repeat;
+	}
+	.img-bx{
+		width:466px;
+		height:347px;
+		padding:29px 26px;
+		background:url(../images/img_bg.png) 0 0 no-repeat;
+		top:133px;
+		&:after{
+			width:467px;
+			height:347px;
+			content:"";
+			display:block;
+			position:absolute;
+			background:url(../images/img_line.png);
+			left:26px;
+			top:29px;
+		}
+		&.reference{
+			left:50px;
+		}
+		&.pay{
+			left:620px;
+			.row{
+				left:26px;
+				top:29px;
+				width:468px;
+				margin-left:-1px;
+			}
+		}
+	}
+	.grid{
+		position:relative;
+		display:block;
+		width:116px;
+		height:115px;
+		margin-left:1px;
+		margin-bottom:1px;
+		float:left;
+		&.yes{
+			&:after{
+				background:url(../images/icon_yes.png) 19px 7px no-repeat;
+			}
+		}
+		&.no{
+			&:after{
+				background:url(../images/icon_no.png) 19px 7px no-repeat;
+			}
+		}
+		&:after{
+			left:0;
+			top:0;
+			content:"";
+			width:116px;
+			height:115px;
+			display:block;
+			border:none;
+			background-position: 19px 7px;
+		}
+		&:focus{
+			&:after{
+				content:"";
+				position:absolute;
+				width:106px;
+				height:105px;
+				border: 5px solid #00ff00;
+				background-position: 14px 18px;
+			}
+		}
+	}
+	.icon-horn{
+		width:48px;
+		height:46px;
+		left:51px;
+		top:564px;
+		background:url(../images/icon_horn.png) 0 0 no-repeat;
+	}
+	.rule{
+		font-size:28px;
+		color:#6a3800;
+		&.difference{
+			left:111px;
+			top:570px;
+			width:500px;
+		}
+	}
+	.progress{
+		width:15px;
+		height:355px;
+		background:url(../images/progress_bg.png) 0 0 no-repeat;
+		padding: 11px;
+		left:1182px;
+		top:161px;
+		.shaft{
+			position:relative;
+			width:16px;
+			height:355px;
+			overflow:hidden;
+		}
+	}
+	.countdown{
+		color:#2c0f81;
+		font-size:26px;
+		width:52px;
+		left:1173px;
+		top:130px;
+	}
+	.time-bx{
+		width:87px;
+		height:67px;
+		left:1050px;
+		top:229px;
+		z-index:3;
+		overflow:hidden;
+		img{
+			left:0;
+			top:-603px;
+		}
+	}
+	.announcement_qr{
+		left:210px;
+		top:204px;
+	}
+	.announcement_text{
+		display:none;
+		width:447px;
+		height:335px;
+		font-size:30px;
+		left:600px;
+		top:227px;
+		&.active{
+			display:block;
+		}
+		p {
+			text-indent:60px;
+		}
+	}
+	.page{
+		display:block;
+		width:88px;
+		height:95px;
+		top:380px;
+		margin-top:-47px;
+		&.page-prev{
+			background:url(../images/pg_prev.png);
+			left:39px;
+		}
+		&.page-next{
+			background:url(../images/pg_next.png);
+			left:1154px;
+		}
+		&:focus{
+			&.page-prev{
+				background:url(../images/pg_prev_focus.png);
+			}
+			&.page-next{
+				background:url(../images/pg_next_focus.png);
+			}
+		}
+	}
+	.page-text{
+		font-size:28px;
+		width:210px;
+		height:43px;
+		line-height:43px;
+		left:535px;
+		top:637px;
+		em{
+			&:first-child{
+				padding-left:15px;
+			}
+			&:last-child{
+				padding-right:15px;
+			}
+		}
+	}
+	.egg{
+		width:219px;
+		height:247px;
+		top:247px;
+		img{
+			margin: 0 auto;
+			display:none;
+		}
+		&:after{
+			// content:" ";
+			// width:98px;
+			// height:121px;
+			// background:url(../images/hammer1.png);
+			// position:absolute;
+			// display:block;
+			// top:-100px;
+			// left:125px;
+			// transition: 0.2s ease-out;
+			// -webkit-transition: 0.2s ease-out;
+			// transform-origin: 97% 97%;
+			// -webkit-transform-origin: 97% 97%;
+		}
+		&.egg-yellow{
+			background:url(../images/egg_yellow.png);
+			left:202px;
+
+			&.active{
+				background:url(../images/egg_yellow_open.png);
+			}
+		}
+		&.egg-green{
+			background:url(../images/egg_green.png);
+			left:450px;
+		}
+		&.egg-red{
+			width:240px;
+			background:url(../images/egg_red.png);
+			left:670px;
+			img{
+				margin-left:55px;
+			}
+		}
+		&:focus{
+			&.egg-yellow{
+				background:url(../images/egg_yellow_focus.png);
+				&.active{
+					background:url(../images/egg_yellow_open.png);
+				}
+			}
+			&.egg-green{
+				background:url(../images/egg_green_focus.png);
+			}
+			&.egg-red{
+				background:url(../images/egg_red_focus.png);
+			}
+			.after{
+				// content:" ";
+				// width:173px;
+				// height:217px;
+				// background:url(../images/hammer.png);
+				// position:absolute;
+				// display:block;
+				// top:-120px;
+				// left:131px;
+				// transform:rotate(-35deg);
+				// -webkit-transform:rotate(-35deg);
+				content:" ";
+				width:98px;
+				height:121px;
+				background:url(../images/hammer1.png);
+				position:absolute;
+				display:block;
+				top:-100px;
+				left:125px;
+				transition: 0.2s ease-out;
+				-webkit-transition: 0.5s ease-out;
+				transform-origin: 97% 97%;
+				-webkit-transform-origin: 97% 97%;
+			}
+			&.smash{
+				.after{
+					transform:rotate(-35deg);
+					-webkit-transform:rotate(-35deg);
+				}
+			}
+			&.active{
+				.after{
+					display:none;
+				}
+			}
+		}
+		// &:active{
+		// 	&:after{
+		// 		transform:rotate(-30deg);
+		// 		-webkit-transform:rotate(-30deg);
+		// 	}
+		// }
+		&.active{
+			img{
+				display: block;
+			}
+			&.egg-yellow{
+				background:url(../images/egg_yellow_open.png);
+			}
+			&.egg-green{
+				background:url(../images/egg_green_open.png);
+			}
+			&.egg-red{
+				background:url(../images/egg_red_open.png);
+			}
+		}
+	}
+	.pounds-game-info{
+		width:587px;
+		font-size:28px;
+		color:#6a3800;
+		left:264px;
+		top:571px;
+	}
+	.win-pic{
+		width:230px;
+		height:170px;
+		padding: 20px 10px 10px;
+		background:url(../images/reference_bg2.jpg);
+		left:952px;
+		top:305px;
+		&:after{
+			content:"";
+			display:block;
+			width:279px;
+			height:242px;
+			position:absolute;
+			left:-12px;
+			top:-183px;
+			background:url(../images/reference_bg1.png);
+		}
+	}
+	.balance-info {
+		width:325px;
+		top:192px;
+		left:191px;
+		.number{
+			font-size:30px;
+		}
+		.history{
+			padding-top:8px;
+			font-size:24px;
+		}
+	}
+	.inout-btn{
+		width:160px;
+		height:103px;
+		text-align:center;
+		line-height:95px;
+		font-size:30px;
+		top:285px;
+		color:#000;
+		background:url(../images/inout_btn.png);
+		&.active{
+			background:url(../images/inout_btn_active.png);
+		}
+		&:focus{
+			&:after{
+				position:absolute;
+				display:block;
+				width:100%;
+				height:100%;
+				content:"";
+				left:0;
+				top:0;
+				background:url(../images/inout_btn_focus.png);
+			}
+		}
+		&.income{
+			left:321px;
+		}
+		&.expend{
+			left:482px;
+		}
+	}
+	.record-list{
+		display:none;
+		width:603px;
+		font-size:24px;
+		left:138px;
+		top:388px;
+		&.active{
+			display:block;
+		}
+		.row{
+			height:42px;
+			line-height:42px;
+			border-bottom:1px solid #969696;
+			&:before,
+			&:after{
+				display:table;
+				content:"";
+				clear:both;
+			}
+			.data{
+				width:168px;
+				padding-left:10px;
+			}
+			.name{
+				min-width:1px;
+				padding-left:35px;
+			}
+			.money{
+				min-width:1px;
+				text-align:right;
+			}
+		}
+	}
+	.account-page{
+		display:block;
+		width:73px;
+		height:68px;
+		&.prev{
+			background:url(../images/account_page_prev.png);
+			top:614px;
+			left:352px;
+		}
+		&.next{
+			background:url(../images/account_page_next.png);
+			top:615px;
+			left:461px;
+		}
+		&:focus{
+			&.prev{
+				background:url(../images/account_page_prev_focus.png);
+			}
+			&.next{
+				background:url(../images/account_page_next_focus.png);
+			}
+		}
+	}
+	.btn-more{
+		display:block;
+		width:355px;
+		height:124px;
+		background:url(../images/btn_more.png);
+		left:862px;
+		top:554px;
+		&:focus{
+			background:url(../images/btn_more_focus.png);
+		}
+	}
+	.advertising-img{
+		left:876px;
+		top:176px;
+		width:335px;
+		height:360px;
+	}
+	.deposit-status{
+		font-size:40px;
+		left:396px;
+		top:255px;
+	}
+	.deposit-info{
+		font-size:30px;
+		line-height:35px;
+		left:524px;
+		top:330px;
+	}
+	.error{
+		font-size:28px;
+		left:612px;
+		top:350px;
+	}
+	.error1{
+		font-size:40px;
+		left:402px;
+		top:440px;
+	}
+	.qr-code-info{
+		width:323px;
+		height:88px;
+		left:745px;
+		top:308px;
+		background:url(../images/qr-code-info.png);
+	}
+}

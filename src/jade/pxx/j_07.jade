@@ -1,0 +1,62 @@
+extends j_04
+block title
+  title 3砸金蛋主页
+block tag
+  - var tag = 4;
+block container
+  a.pa.egg.egg-yellow(href="#" data-tag='0')
+    img(src="../static/images/1111.jpg")
+    .pa.after
+  a.pa.egg.egg-green(href="#" data-tag='1')
+    img(src="../static/images/1111.jpg")
+    .pa.after
+  a.pa.egg.egg-red(href="#" data-tag='0')
+    img(src="../static/images/1111.jpg")
+    .pa.after
+  .pa.pounds-game-info
+    p 砸中参照物:
+    p
+      |洁柔纸洁柔纸洁柔纸业提供奖金洁柔纸洁柔纸洁
+      em.text-red 5.00
+      | 元
+  .pa.win-pic
+    img(src="../static/images/22222.jpg")
+block script
+  script.
+    (function(window,undefined){
+      $(document).on('click', '.egg', function(){
+        var $this = $(this),
+            $after = $this.find('.after'),
+            time = null,
+            d = 0,
+            tag = $this.attr('data-tag');
+        //$this.addClass('smash');
+        setInterval(function(){
+          d-=10;
+          $after.css('transform','rotate(' + d +'deg)');
+          if(d==-40) clearInterval(time);
+        },100)
+        setTimeout(function(){
+          $this.addClass('active');
+            setTimeout(function(){
+              location.href = tag==1 ? 'j_05.html' : 'j_04.html';//成功URL ，失败URL
+            },1500);
+        },500);
+      });
+    })(window)
+    //- var a = $('.egg');
+    
+    //- a.on("keydown", function(e){
+    //-   e = e || window;
+    //-   console.log(e.keyCode);
+    //-   if(e.keyCode === 13){
+    
+    //-   }
+    //- });
+
+    //- function tranform(a1, a2){
+    //-   var i = 10;
+    //-   setInterval(function(){
+    //-     transform:rotate((-30 * i)deg);
+    //-   }, a2)
+    //- }

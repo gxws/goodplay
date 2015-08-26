@@ -1,0 +1,31 @@
+extends ../public/_layout
+block title
+  title 首页
+block logotitle
+block announcement
+  a.pa.navbtn.navbtn-announcement(href="#")
+    i.pa.new-tag
+  a.pa.navbtn.navbtn-wallet(href="#")
+block container
+  a.pa.joinbtn.joinbtn-difference(href="#")
+  a.pa.joinbtn.joinbtn-pounds(href="#")
+  .pa.reel.text-white(data-text="公告,中奖信息1,中奖信息2,中奖信息3,中奖信息4")
+block script
+  script.
+    (function(window,undefined){
+      var $reel = $('.reel'),
+          arr = $reel.attr('data-text').split(','),
+          len = arr.length;
+          tag = 0,
+      $reel.text(arr[tag]);
+      (function time(){
+        setTimeout(function(){
+          if(tag==(len-1)){
+            tag=-1;
+          }
+          tag+=1;
+          $reel.text(arr[tag]);
+          time();
+        },6000)
+      })()
+    })(window)

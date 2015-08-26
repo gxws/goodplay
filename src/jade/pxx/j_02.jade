@@ -1,0 +1,25 @@
+extends ../public/_layout
+block title
+  title 来找茬结果-成功
+block tag
+  - var tag=1;
+block logotitle
+  .pa.title
+    img(src="../static/images/difference_title.png")
+block container
+  .pa.qr-code
+    img(src="../static/images/qr.jpg" width="352" height="352")
+  block status
+    - var status = 0;
+  - var st = ['succeed','fail','finished','win'],tx =['找茬成功！','找茬失败！','完蛋了，没中奖！','中奖了！']
+  .pa.result-icon(class= st[status])
+  .pa.status-text= tx[status]
+  .pa.info
+    block info
+      | 洁柔纸业已将
+      em.text-red 5.00
+      | 元奖金存入你的口袋。你的口袋。你的口袋。你的口袋。你的口袋。你
+  a.pa.btn.game(href="#")
+    block btntx
+       | 继续找茬
+  .pa.info-text-bg

@@ -1,0 +1,24 @@
+meta(http-equiv="Content-Type" content="text/html;charset=utf-8")
+meta(name="Author" content="jiqingjian")
+meta(name="Keywords" content="jiqingjian")
+meta(name="Description" content="jiqingjian")
+link(rel="stylesheet" href="../static/css/base.css" type='text/css')
+link(rel="stylesheet" href="../static/css/base_HD.css")
+script(type='text/javascript').
+  (function(window, undefined){
+    document.onkeydown = function(e){
+    //var e = event || window.event || arguments.callee.caller.arguments[0];
+    //alert(e.keyCode)
+      switch (e.keyCode){
+        case 48:
+          location.reload();
+          break;
+        case 57:
+          location.href="../index.html";
+          break;
+        //- case 8:
+        //-   location.href="index.html";
+        //-   break;
+      }
+    }
+  })(window)

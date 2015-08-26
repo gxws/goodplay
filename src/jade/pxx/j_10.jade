@@ -1,0 +1,62 @@
+extends ../public/_layout
+block title
+  title 4我的口袋
+block tag
+  - var tag=7;
+block logotitle
+  .pa.title
+    img(src="../static/images/my-account_title.png")
+block container
+  .pa.balance-info
+    .number 口袋余额：4540.00元
+    .history 历史获得奖金总计 15502.00元
+  a.pa.btn.deposit(href="#") 存入电视账户
+  a.pa.inout-btn.income.active(href="#") 收入
+  a.pa.inout-btn.expend(href="#") 支出
+  //.pa.record-list
+  .J_box
+    - for(var i=0;i<11;i++){
+      .row
+        .data.fl 15/06/25 15:43
+        .name.fl 来找茬--洁柔纸业
+        .money.fr 0.55元
+    - }
+  a.pa.account-page.prev(href="#")
+  a.pa.account-page.next(href="#")
+  img.pa.advertising-img(src="../static/images/2222.jpg" width="335" height="360")
+  a.pa.btn-more(href="#")
+block balance
+block script
+  script.
+    (function(window,undefined){
+      var $row = $('.row'),
+          size = $row.size(),
+          len = Math.ceil(size/5),
+          index = 0;
+      for(var i=0;i<size;i++){
+        var tag = Math.ceil((i+1)/5);
+        $row.eq(i).attr('data-tag', tag);
+      }
+      for(var x=0;x<len;x++){
+        if(x==0){
+          $('[data-tag='+(x+1)+']').wrapAll('<div class="pa record-list active"></div>');
+        }else{
+          $('[data-tag='+(x+1)+']').wrapAll('<div class="pa record-list"></div>');
+        }
+      }
+      $(document).on('click', '.account-page',function(){
+        pAge($(this));
+      });
+      function pAge($obj){
+        var $this = $obj,
+            prev  =  $this.hasClass('prev'),
+            next  = $this.hasClass('next'),
+            $text = $('.record-list'),
+            $prev = $text.eq(index).prev(),
+            $next = $text.eq(index).next();
+        if((prev && $prev.size()==0) || (next && $next.size()==0)) return false;
+        $text.eq(index).removeClass('active');
+        index += next ? 1 : -1;
+        $text.eq(index).addClass('active');
+      }
+    })(window);

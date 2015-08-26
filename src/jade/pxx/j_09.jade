@@ -1,0 +1,58 @@
+extends ../public/_layout
+block title
+  title 1-1公告页
+block tag
+  - var tag=6;
+block logotitle
+  .pa.title
+    img(src="../static/images/announcement_title.png")
+block container
+  img.pa.announcement_qr(src="../static/images/qr.jpg" width="352" height="352")
+  a.pa.page.page-prev(href="javascript:;")
+  .J_announcement_bx
+    - for(var i=0;i<6;i++){
+      - if(i==0)
+        .pa.announcement_text.active
+          p= i+1+'这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦是公。'
+      - else
+        .pa.announcement_text
+          p= i+1+'这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦这是公告哦是公。'
+    - }
+  a.pa.page.page-next(href="javascript:;")
+  .pa.page-text.tc
+    | 第
+    em
+    | /
+    em
+    | 页
+block script
+  script.
+    (function(window,undefined){
+      var index = 0,
+          $em = $('.page-text em');
+      $em.eq(0).text('1')
+      $em.eq(1).text($('.announcement_text').size());
+      function pAge($obj){
+        var $this = $obj,
+            prev  =  $this.hasClass('page-prev'),
+            next  = $this.hasClass('page-next'),
+            $text = $('.announcement_text'),
+            $prev = $text.eq(index).prev(),
+            $next = $text.eq(index).next();
+        if((prev && $prev.size()==0) || (next && $next.size()==0)) return false;
+        $text.eq(index).removeClass('active');
+        index += next ? 1 : -1;
+        $text.eq(index).addClass('active');
+        $em.eq(0).text(index+1);
+      }
+      $(document).on('click','.page',function(){
+        pAge($(this));
+      }).on('keydown', '.page' ,function(e){
+        if(e.keyCode == 37 && $(this).hasClass('page-prev')){
+          pAge($(this));
+        }
+        if(e.keyCode == 39 && $(this).hasClass('page-next')){
+          pAge($(this));
+        }
+      });
+    })(window);

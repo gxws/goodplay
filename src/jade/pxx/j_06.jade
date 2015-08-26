@@ -1,0 +1,82 @@
+extends j_02
+block title
+  title 2来找茬主页
+block tag
+  - var tag=2;
+block container
+  .pa.img-bx.reference
+    img(src="../static/images/reference.jpg")
+  .pa.img-bx.pay
+    img(src="../static/images/reference.jpg")
+    .pa.row(data-max="5")
+      - for(var i=0;i<12;i++){
+        - if(i==0)
+          a.grid.J_focus(href="javascript:;" data-tag="0")
+            img(src="../static/images/dot.gif")
+        - else if((i==3)||(i==6)||(i==7))
+          a.grid(href="javascript:;" data-tag="1")
+            img(src="../static/images/dot.gif")
+        - else
+          a.grid(href="javascript:;" data-tag="0")
+            img(src="../static/images/dot.gif")
+      -}
+  .pa.icon-horn
+  .pa.rule.difference
+    |游戏规则：对比左图，在右图找出
+    em.text-red &nbsp;3&nbsp;
+    | 处不同点。
+    em.text-red 珀莱雅
+    |将为您提供
+    em.text-red 5.00
+    | 元奖金。
+  .pa.progress.text-white
+    .shaft
+      img#bar.pa.lt(src="../static/images/progress_bar.png")
+    //marquee(direction="down" loop="100" behaviour="slide" width="16" height="355"  scrollamount="2" align="texttop")
+      img(src="../static/images/progress_bar.png")
+  .pa.countdown.J_countdown.tr 120s
+block script
+  script(src="../../static/public/js/jquery.min.js")
+  script.
+    (function(window,undefined){
+      var time = null,
+          $img = $('#bar'),
+          tag =120,
+          max = $('.row').attr('data-max'),
+          cliksize = 0,
+          yes = 0,
+          nb = 0;
+      $('.J_focus').focus();
+      $img.animate({
+          top:355
+        },120000,'linear');
+      time = setInterval(function(){
+        if(tag<=0) return false;
+        tag--;
+        $('.J_countdown').text(tag+'s');
+        if(tag<=0){//超时跳转失败结果
+          location.href='j_03.html';
+        }
+      },1000);
+      $(document).on('click','.grid',function(){
+        var $this = $(this),
+            size  = $('[data-tag=1]').size(),
+            _tag = $this.attr('data-tag'),
+            has = $this.hasClass('no') || $this.hasClass('yes');
+        if(has) return false;
+        if(_tag==1) nb++;
+        cliksize+=1;
+        yes += $this.attr('data-tag')
+        $this.addClass(_tag==1?'yes' : 'no');
+        if(nb==size){//全部正确跳转成功结果
+          location.href='j_02.html';
+          return false;
+        }else if((cliksize>=max) && (nb==size)){//在限制次数内跳转成功结果
+          location.href='j_02.html';
+          return false;
+        }else if((cliksize>=max) && (nb!=size)){//在限制次数内中转失败结果
+          location.href='j_03.html';
+          return false;
+        }
+      });
+    })()
