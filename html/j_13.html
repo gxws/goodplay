@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>404</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Author" content="jiqingjian">
+    <meta name="Keywords" content="jiqingjian">
+    <meta name="Description" content="jiqingjian">
+    <link rel="stylesheet" href="../static/css/base.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/base_HD.css">
+    <script type="text/javascript">
+      (function(window, undefined){
+        document.onkeydown = function(e){
+        //var e = event || window.event || arguments.callee.caller.arguments[0];
+        //alert(e.keyCode)
+          switch (e.keyCode){
+            case 48:
+              location.reload();
+              break;
+            case 57:
+              location.href="../index.html";
+              break;
+            //- case 8:
+            //-   location.href="index.html";
+            //-   break; 
+          }
+        }
+      })(window)
+    </script>
+  </head>
+  <body class="wrap bg-404">
+    <div class="header">
+      <div class="pa logo"><img src="../static/images/logo.png"></div><a href="#" class="pa navbtn navbtn-home"></a><a href="#" class="pa navbtn navbtn-index"></a><a href="#" class="pa navbtn navbtn-back"></a>
+      <div class="pa date tc text-white J_j_date">2015|8|6|4|23|59|55</div>
+      <!--年|月|日|星期|时|分|秒-->
+    </div>
+    <div class="pa error text-white">
+      <p>哎，来晚了，本次游戏下线了！</p>
+      <p>哼，我玩其他的！</p>
+    </div><a href="#" class="pa btn depositbtn J_focus">选择游戏</a>
+    <div class="pa balance text-white">4540.00</div>
+    <script src="../../static/public/js/jquery.min.js"></script>
+    <script src="../static/js/base.js"></script>
+  </body>
+</html>
