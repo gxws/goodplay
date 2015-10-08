@@ -55,8 +55,8 @@
 		top:36px;
 	}
 	.title{
-		left:268px;
-		top:73px;
+		left:293px;
+		top:70px;
 	}
 	.navbtn{
 		width:106px;
@@ -72,7 +72,8 @@
 			top:20px;
 		}
 		&.navbtn-announcement{
-			left:625px;
+			//left:625px;
+			left:792px;
 			&:after{
 				background:url(../images/nav_announcement.png);
 			}
@@ -86,25 +87,28 @@
 			}
 		}
 		&.navbtn-home{
-			left:801px;
+			//left:801px;
+			left:967px;
 			&:after{
 				background:url(../images/nav_home.png);
 			}
 		}
 		&.navbtn-index{
-			left:889px;
+			//left:889px;
+			left:1056px;
 			&:after{
 				background:url(../images/nav_index.png);
 			}
 		}
 		&.navbtn-back{
-			left:977px;
+			left:1144px;
 			&:after{
 				background:url(../images/nav_back.png);
 			}
 		}
 		&.navbtn-wallet{
-			left:713px;
+			//left:713px;
+			left:880px;
 			&:after{
 				background:url(../images/nav_wallet.png);
 			}
@@ -478,9 +482,14 @@
 		width:219px;
 		height:247px;
 		top:247px;
+		z-index:11;
 		img{
 			margin: 0 auto;
 			display:none;
+			transition: 0.5s ease-out;
+			position:absolute;
+			top:0;
+			//z-index:19;
 		}
 		&:after{
 			// content:" ";
@@ -499,7 +508,9 @@
 		&.egg-yellow{
 			background:url(../images/egg_yellow.png);
 			left:202px;
-
+			img{
+				left:282px;
+			}
 			&.active{
 				background:url(../images/egg_yellow_open.png);
 			}
@@ -507,13 +518,16 @@
 		&.egg-green{
 			background:url(../images/egg_green.png);
 			left:450px;
+			img{
+				left:34px;
+			}
 		}
 		&.egg-red{
 			width:240px;
 			background:url(../images/egg_red.png);
 			left:670px;
 			img{
-				margin-left:55px;
+				left:-186px;
 			}
 		}
 		&:focus{
@@ -574,6 +588,7 @@
 		&.active{
 			img{
 				display: block;
+				z-index:999;
 			}
 			&.egg-yellow{
 				background:url(../images/egg_yellow_open.png);
@@ -587,11 +602,11 @@
 		}
 	}
 	.pounds-game-info{
-		width:587px;
+		width:700px;
 		font-size:28px;
 		color:#6a3800;
 		left:264px;
-		top:571px;
+		top:600px;
 	}
 	.win-pic{
 		width:230px;
@@ -607,7 +622,7 @@
 			height:242px;
 			position:absolute;
 			left:-12px;
-			top:-183px;
+			top:-209px;
 			background:url(../images/reference_bg1.png);
 		}
 	}

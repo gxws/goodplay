@@ -56,8 +56,8 @@
   }
 
   .title {
-    left: 268px;
-    top: 73px;
+    left: 293px;
+    top: 70px;
   }
 
   .navbtn {
@@ -75,7 +75,7 @@
     top: 20px;
   }
   .navbtn.navbtn-announcement {
-    left: 625px;
+    left: 792px;
   }
   .navbtn.navbtn-announcement:after {
     background: url(../images/nav_announcement.png);
@@ -89,25 +89,25 @@
     top: 20px;
   }
   .navbtn.navbtn-home {
-    left: 801px;
+    left: 967px;
   }
   .navbtn.navbtn-home:after {
     background: url(../images/nav_home.png);
   }
   .navbtn.navbtn-index {
-    left: 889px;
+    left: 1056px;
   }
   .navbtn.navbtn-index:after {
     background: url(../images/nav_index.png);
   }
   .navbtn.navbtn-back {
-    left: 977px;
+    left: 1144px;
   }
   .navbtn.navbtn-back:after {
     background: url(../images/nav_back.png);
   }
   .navbtn.navbtn-wallet {
-    left: 713px;
+    left: 880px;
   }
   .navbtn.navbtn-wallet:after {
     background: url(../images/nav_wallet.png);
@@ -478,14 +478,21 @@
     width: 219px;
     height: 247px;
     top: 247px;
+    z-index: 11;
   }
   .egg img {
     margin: 0 auto;
     display: none;
+    transition: 0.5s ease-out;
+    position: absolute;
+    top: 0;
   }
   .egg.egg-yellow {
     background: url(../images/egg_yellow.png);
     left: 202px;
+  }
+  .egg.egg-yellow img {
+    left: 282px;
   }
   .egg.egg-yellow.active {
     background: url(../images/egg_yellow_open.png);
@@ -494,13 +501,16 @@
     background: url(../images/egg_green.png);
     left: 450px;
   }
+  .egg.egg-green img {
+    left: 34px;
+  }
   .egg.egg-red {
     width: 240px;
     background: url(../images/egg_red.png);
     left: 670px;
   }
   .egg.egg-red img {
-    margin-left: 55px;
+    left: -186px;
   }
   .egg:focus.egg-yellow {
     background: url(../images/egg_yellow_focus.png);
@@ -537,6 +547,7 @@
   }
   .egg.active img {
     display: block;
+    z-index: 999;
   }
   .egg.active.egg-yellow {
     background: url(../images/egg_yellow_open.png);
@@ -549,11 +560,11 @@
   }
 
   .pounds-game-info {
-    width: 587px;
+    width: 700px;
     font-size: 28px;
     color: #6a3800;
     left: 264px;
-    top: 571px;
+    top: 600px;
   }
 
   .win-pic {
@@ -571,7 +582,7 @@
     height: 242px;
     position: absolute;
     left: -12px;
-    top: -183px;
+    top: -209px;
     background: url(../images/reference_bg1.png);
   }
 
