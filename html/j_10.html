@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>4我的口袋</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Author" content="jiqingjian">
+    <meta name="Keywords" content="jiqingjian">
+    <meta name="Description" content="jiqingjian">
+    <link rel="stylesheet" href="../static/css/base.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/base_HD.css">
+    <script type="text/javascript">
+      (function(window, undefined){
+        document.onkeydown = function(e){
+        //var e = event || window.event || arguments.callee.caller.arguments[0];
+        //alert(e.keyCode)
+          switch (e.keyCode){
+            case 48:
+              location.reload();
+              break;
+            case 57:
+              location.href="../index.html";
+              break;
+            //- case 8:
+            //-   location.href="index.html";
+            //-   break; 
+          }
+        }
+      })(window)
+    </script>
+  </head>
+  <body class="wrap my-account">
+    <div class="header">
+      <div class="pa logo"><img src="../static/images/logo.png"></div>
+      <div class="pa title"><img src="../static/images/my-account_title.png"></div><a href="#" class="pa navbtn navbtn-home"></a><a href="#" class="pa navbtn navbtn-index"></a><a href="#" class="pa navbtn navbtn-back"></a>
+      <!--.pa.date.tc.text-white.J_j_date 2015|8|6|4|23|59|55-->
+      <!--年|月|日|星期|时|分|秒-->
+    </div>
+    <div class="pa balance-info">
+      <div class="number">口袋余额：4540.00元</div>
+      <div class="history">历史获得奖金总计 15502.00元</div>
+    </div><a href="#" class="pa btn deposit">存入电视账户</a><a href="#" class="pa inout-btn income active">收入</a><a href="#" class="pa inout-btn expend">支出</a>
+    <!--.pa.record-list-->
+    <div class="J_box">
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+      <div class="row">
+        <div class="data fl">15/06/25 15:43</div>
+        <div class="name fl">来找茬--洁柔纸业</div>
+        <div class="money fr">0.55元</div>
+      </div>
+    </div><a href="#" class="pa account-page prev"></a><a href="#" class="pa account-page next"></a><img src="../static/images/2222.jpg" width="335" height="360" class="pa advertising-img"><a href="#" class="pa btn-more"></a>
+    <script src="../../static/public/js/jquery.min.js"></script>
+    <script src="../static/js/base.js"></script>
+    <script>
+      (function(window,undefined){
+        var $row = $('.row'),
+            size = $row.size(),
+            len = Math.ceil(size/5),
+            index = 0;
+        for(var i=0;i<size;i++){
+          var tag = Math.ceil((i+1)/5);
+          $row.eq(i).attr('data-tag', tag);
+        }
+        for(var x=0;x<len;x++){
+          if(x==0){
+            $('[data-tag='+(x+1)+']').wrapAll('<div class="pa record-list active"></div>');
+          }else{
+            $('[data-tag='+(x+1)+']').wrapAll('<div class="pa record-list"></div>');
+          }
+        }
+        $(document).on('click', '.account-page',function(){
+          pAge($(this));
+        });
+        function pAge($obj){
+          var $this = $obj,
+              prev  =  $this.hasClass('prev'),
+              next  = $this.hasClass('next'),
+              $text = $('.record-list'),
+              $prev = $text.eq(index).prev(),
+              $next = $text.eq(index).next();
+          if((prev && $prev.size()==0) || (next && $next.size()==0)) return false;
+          $text.eq(index).removeClass('active');
+          index += next ? 1 : -1;
+          $text.eq(index).addClass('active');
+        }
+      })(window);
+    </script>
+  </body>
+</html>

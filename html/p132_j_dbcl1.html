@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>DBCL-1-信用额度使用提示</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+    <meta name="Author" content="jiqingjian"/>
+    <meta name="Keywords" content="jiqingjian"/>
+    <meta name="Description" content="jiqingjian"/>
+    <link rel="stylesheet" href="../static/css/base.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/base_HD.css"/>
+    <script type="text/javascript">
+      (function(window, undefined){
+        document.onkeydown = function(e){
+        //var e = event || window.event || arguments.callee.caller.arguments[0];
+        //alert(e.keyCode)
+          switch (e.keyCode){
+            case 48:
+              location.reload();
+              break;
+            case 57:
+              location.href="../index.html";
+              break;
+            //- case 8:
+            //-   location.href="index.html";
+            //-   break;
+          }
+        }
+      })(window)
+    </script>
+  </head>
+  <body>
+    <div class="pa pr wrap">
+      <div class="pa header lt">
+        <div class="pa balance-icon ic1"></div>
+        <div class="pa balance b1"><em class="text-white">账户余额：</em><em class="text-yellow">-1000.00</em><em class="text-white">元</em></div><a id="hdupbtn" href="#" onfocus="showdiv('hdup')" onblur="closediv('hdup')" style="z-index=1" class="pa hd-up-btn"><img src="../static/images/p135_topup_btn.jpg"/></a>
+        <div style="z-index=2" class="pa hd-up-btn img nom"></div>
+        <div id="hdup" style="visibility:hidden;" class="pa hd-up-btn img focus"></div>
+      </div>
+      <div class="pa container">
+        <div class="pa icon icon-usagetip"></div>
+        <div class="pa info inf1 tc"><em class="text-white">您的账户已透支</em><em class="text-yellow">20</em><em class="text-white">元，还可透支</em><em class="text-yellow">190.00</em><em class="text-white">元。</em></div><a href="#" onfocus="showdiv('btn')" onblur="closediv('btn')" class="pa btn btn-ps btn-next"><img src="../static/images/p135_btn_next.png"/></a>
+        <div class="pa btn btn-ps btn-next nom"></div>
+        <div id="btn" style="visibility:hidden;" class="pa btn btn-ps btn-next focus"></div>
+      </div>
+      <div class="pa footer"><a id="footer_index" href="#" onfocus="showdiv('index_focus')" onblur="closediv('index_focus')" style="z-index=1" class="pa btn-index"><img src="../static/images/p135_footer_index_07.jpg"/></a>
+        <div style="z-index=2" class="pa btn btn-index img nom"></div>
+        <div id="index_focus" style="visibility:hidden;" class="pa btn-index img focus"></div><a id="footer_home" href="#" onfocus="showdiv('home_focus')" onblur="closediv('home_focus')" style="z-index=1" class="pa btn-home"><img src="../static/images/p135_footer_home_08.jpg"/></a>
+        <div style="z-index=2" class="pa btn btn-home img nom"></div>
+        <div id="home_focus" style="visibility:hidden;" class="pa btn-home img focus"></div><a id="footer_back" href="#" onfocus="showdiv('back_focus')" onblur="closediv('back_focus')" style="z-index=1" class="pa btn-back"><img src="../static/images/p135_footer_back_09.jpg"/></a>
+        <div style="z-index=2" class="pa btn btn-back img nom"></div>
+        <div id="back_focus" style="visibility:hidden;" class="pa btn-back img focus"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      /**
+      * 机顶盒编号
+      * @method base.tbId
+      * @since p53
+      * @type string
+      * @default 00000000000
+      */
+      //base.tbId = window.guangxi ? guangxi.getStbNum() || guangxi.System.newwork.macAddress.replace(/:/g, '').replace(/No Card/g, '') || doc.all.ip.value : '00000000000';
+      /**
+      * 机顶盒类型
+      * @method base.tbType
+      * @since p53
+      * @type string
+      * @default 0000
+      */
+      //base.tbType = window.iPanel ? /(Safari)|(Chrome)|(Firefox)/.test(navigator.userAgent) ? base.tbId.length == 11 && base.tbId.substring(2, 4) == '19' ? '0002' : window.iPanel.getGlobalVar('RESOLUTION_1280_720') ? '0003' : '0002' : '0001' : '0000';
+      //if(base.tbType != (0002 || '0002' || 0003 || '0003'))return false;
+      function showdiv(id) {
+          document.getElementById(id).style.visibility="visible";
+      }
+      
+      function closediv(id) {
+          document.getElementById(id).style.visibility="hidden";
+      }
+    </script>
+  </body>
+</html>

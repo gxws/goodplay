@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2-0来找茬游戏说明</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Author" content="jiqingjian">
+    <meta name="Keywords" content="jiqingjian">
+    <meta name="Description" content="jiqingjian">
+    <link rel="stylesheet" href="../static/css/base.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/base_HD.css">
+    <script type="text/javascript">
+      (function(window, undefined){
+        document.onkeydown = function(e){
+        //var e = event || window.event || arguments.callee.caller.arguments[0];
+        //alert(e.keyCode)
+          switch (e.keyCode){
+            case 48:
+              location.reload();
+              break;
+            case 57:
+              location.href="../index.html";
+              break;
+            //- case 8:
+            //-   location.href="index.html";
+            //-   break; 
+          }
+        }
+      })(window)
+    </script>
+  </head>
+  <body class="wrap difference-gamedescription">
+    <div class="pa time-bx"><img id="time_nb" src="../static/images/time_nb.png" width="87" height="670" class="pa"></div><a href="#" class="pa btn play-game">开始游戏</a>
+    <script src="../../static/public/js/jquery.min.js"></script>
+    <script src="../static/js/base.js"></script>
+    <script>
+      var time=null;
+      (function(window,undefined){
+        $('#time_nb').animate({
+          top: 0
+        },10000,'linear');
+        time = setInterval(function(){
+          location.href='j_06.html'
+        },11000);
+      })(window)
+    </script>
+  </body>
+</html>
