@@ -338,6 +338,9 @@
     margin-bottom: 1px;
     float: left;
   }
+  .grid:after {
+    position: absolute;
+  }
   .grid.yes:after {
     background: url(../images/icon_yes.png) 19px 7px no-repeat;
   }

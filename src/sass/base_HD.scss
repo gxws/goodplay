@@ -341,6 +341,7 @@
 		margin-left:1px;
 		margin-bottom:1px;
 		float:left;
+		&:after{position:absolute}
 		&.yes{
 			&:after{
 				background:url(../images/icon_yes.png) 19px 7px no-repeat;
