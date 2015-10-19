@@ -1,6 +1,6 @@
 (function(window,undefined){
   $('.J_focus').focus();
-  if(!$('.J_j_date').size())return;
+  if($('.J_j_date').size()){
   var _run,
       $date = $('.J_j_date'),
       date  = $date.text().split('|'),
@@ -31,5 +31,22 @@
     }else{
       date[i] = num + 1;
     }
+  }
+}
+  if($('.J_j_advertising').size()){
+    var $imgBox = $('.J_j_advertising'),
+        $img = $imgBox.find('img'),
+        len = $img.size()-1,
+        time = null,
+        index = 0;
+    time = setInterval(function(){
+      $img.eq(index).removeClass('active');
+      index+=1;
+      if(index>len){
+        index=0;
+      }
+      $img.eq(index).addClass('active');
+
+    },5000);
   }
 })(window)

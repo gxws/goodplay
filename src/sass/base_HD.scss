@@ -742,6 +742,13 @@
 		top:176px;
 		width:335px;
 		height:360px;
+		img{
+			border:0;
+			display:none;
+		}
+		img.active{
+			display:block;
+		}
 	}
 	.deposit-status{
 		font-size:40px;

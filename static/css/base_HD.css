@@ -705,6 +705,13 @@
     width: 335px;
     height: 360px;
   }
+  .advertising-img img {
+    border: 0;
+    display: none;
+  }
+  .advertising-img img.active {
+    display: block;
+  }
 
   .deposit-status {
     font-size: 40px;
