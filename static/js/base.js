@@ -50,3 +50,52 @@
     },5000);
   }
 })(window)
+init = (function(){
+      var time = null,
+          $img = $('#bar'),
+          tag =120,
+          max = $('.row').attr('data-max'),
+          failmax = $('.row').attr('data-failmax'),
+          cliksize = 0,
+          yes = 0,
+          nb = 0,
+          _nb = 0;
+      if($img.size()){
+        $img.animate({
+            top:355
+          },120000,'linear');
+        time = setInterval(function(){
+          if(tag<=0) return false;
+          tag--;
+          $('.J_countdown').text(tag+'s');
+          if(tag<=0){//超时跳转失败结果
+            location.href='j_03.html';
+          }
+        },1000);
+        $(document).on('click','.grid',function(){
+          var $this = $(this),
+              size  = $('[data-tag=1]').size(),
+              _tag = $this.attr('data-tag'),
+              has = $this.hasClass('no') || $this.hasClass('yes');
+          if(has) return false;
+          _tag == 1 ? nb+=1 : _nb+=1;
+          //if(_tag==1) nb++;
+          cliksize+=1;
+          //yes += $this.attr('data-tag');
+          $this.addClass(_tag==1?'yes' : 'no');
+          if(nb==size){//全部正确跳转成功结果
+            location.href='j_02.html';
+            return false;
+          }else if(_nb==failmax){//全部正确跳转成功结果
+            location.href='j_03.html';
+            return false;
+          }else if((cliksize>=max) && (nb==size)){//在限制次数内跳转成功结果
+            location.href='j_02.html';
+            return false;
+          }else if((cliksize>=max) && (nb!=size)){//在限制次数内中转失败结果
+            location.href='j_03.html';
+            return false;
+          }
+        });
+      }
+    })();
