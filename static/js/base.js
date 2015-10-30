@@ -54,8 +54,11 @@ init = (function(){
       var time = null,
           $img = $('#bar'),
           tag =120,
-          max = $('.row').attr('data-max'),
-          failmax = $('.row').attr('data-failmax'),
+          $row = $('.row'),
+          max =$row.attr('data-max'),
+          failmax = $row.attr('data-failmax'),
+          succeedurl = $row.attr('data-succeedurl'),
+          failurl = $row.attr('data-failurl'),
           cliksize = 0,
           yes = 0,
           nb = 0,
@@ -84,16 +87,16 @@ init = (function(){
           //yes += $this.attr('data-tag');
           $this.addClass(_tag==1?'yes' : 'no');
           if(nb==size){//全部正确跳转成功结果
-            location.href='j_02.html';
+            location.href=succeedurl;
             return false;
           }else if(_nb==failmax){//全部正确跳转成功结果
-            location.href='j_03.html';
+            location.href=failurl;
             return false;
           }else if((cliksize>=max) && (nb==size)){//在限制次数内跳转成功结果
-            location.href='j_02.html';
+            location.href=succeedurl;
             return false;
           }else if((cliksize>=max) && (nb!=size)){//在限制次数内中转失败结果
-            location.href='j_03.html';
+            location.href=failurl;
             return false;
           }
         });
