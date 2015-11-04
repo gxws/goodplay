@@ -72,7 +72,7 @@ init = (function(){
           tag--;
           $('.J_countdown').text(tag+'s');
           if(tag<=0){//超时跳转失败结果
-            location.href='j_03.html';
+            location.href = failurl;
           }
         },1000);
         $(document).on('click','.grid',function(){
@@ -89,7 +89,7 @@ init = (function(){
           if(nb==size){//全部正确跳转成功结果
             location.href=succeedurl;
             return false;
-          }else if(_nb==failmax){//全部正确跳转成功结果
+          }else if(_nb==failmax){//全部错误跳转失败结果
             location.href=failurl;
             return false;
           }else if((cliksize>=max) && (nb==size)){//在限制次数内跳转成功结果
