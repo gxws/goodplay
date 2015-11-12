@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @media (min-width: 1280px) {
   .wrap {
     width: 1280px;
@@ -590,7 +589,10 @@
     background: url(../images/reference_bg1.png);
   }
   .win-pic:before {
-    content: "按【确定】砸蛋";
+    content: "";
+    width: 200px;
+    height: 32px;
+    background: url(../images/pic_info.png);
     display: block;
     position: absolute;
     left: 25px;
