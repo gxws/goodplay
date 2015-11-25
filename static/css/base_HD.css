@@ -588,6 +588,18 @@
     top: -209px;
     background: url(../images/reference_bg1.png);
   }
+  .win-pic:before {
+    content: "";
+    width: 200px;
+    height: 32px;
+    background: url(../images/pic_info.png);
+    display: block;
+    position: absolute;
+    left: 25px;
+    top: 210px;
+    font-size: 28px;
+    font-weight: 700;
+  }
 
   .balance-info {
     width: 325px;
@@ -720,6 +732,7 @@
   }
 
   .deposit-info {
+    width: 610px;
     font-size: 30px;
     line-height: 35px;
     left: 524px;

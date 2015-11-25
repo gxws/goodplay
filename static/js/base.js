@@ -50,3 +50,55 @@
     },5000);
   }
 })(window)
+init = (function(){
+      var time = null,
+          $img = $('#bar'),
+          tag =120,
+          $row = $('.row'),
+          //max =$row.attr('data-max'),
+          url = $row.attr('data-url') + '&rt=',
+          failmax = $row.attr('data-failmax'),
+          //arg='&rt=',
+          // succeedurl = $row.attr('data-succeedurl'),
+          // failurl = $row.attr('data-failurl'),
+          //cliksize = 0,
+          yes = 0,
+          nb = 0,//正确次数
+          _nb = 0;//错误次数
+      if($img.size()){
+        $img.animate({
+            top:355
+          },120000,'linear');
+        time = setInterval(function(){
+          if(tag<=0) return false;
+          tag--;
+          $('.J_countdown').text(tag+'s');
+          if(tag<=0){//超时跳转失败结果
+            location.href = url + 1;
+          }
+        },1000);
+        $(document).on('click','.grid',function(){
+          var $this = $(this),
+              size  = $('[data-tag=1]').size(),
+              _tag = $this.attr('data-tag'),
+              has = $this.hasClass('no') || $this.hasClass('yes');
+          if(has) return false;
+          _tag == 1 ? nb+=1 : _nb+=1;
+          //cliksize+=1;
+          $this.addClass(_tag==1?'yes' : 'no');
+          // nb==size ? delay(0) : _nb==failmax ? delay(0) :
+          if(nb==size){//全部正确跳转成功结果
+            delay(0)
+            return false;
+          }else if(_nb==failmax){//全部错误跳转失败结果
+            delay(2)
+          }
+          function delay(ag){
+            var ag = ag;
+            setTimeout(function(){
+              location.href= url + ag;
+            },1000)
+          }
+        });
+      }
+    })();

@@ -37,7 +37,7 @@
     </div>
     <div class="pa img-bx reference"><img src="../static/images/reference.jpg"></div>
     <div class="pa img-bx pay"><img src="../static/images/reference.jpg">
-      <div data-max="5" class="pa row"><a href="javascript:;" data-tag="0" class="grid J_focus"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="1" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="1" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="1" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a>
+      <div data-failmax="3" data-url="j_02.html" class="pa row"><a href="javascript:;" data-tag="0" class="grid J_focus"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="1" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="1" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="1" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a><a href="javascript:;" data-tag="0" class="grid"><img src="../static/images/dot.gif"></a>
       </div>
     </div>
     <div class="pa icon-horn"></div>
@@ -51,50 +51,5 @@
     <div class="pa balance text-white">4540.00</div>
     <!--script(src="../../static/public/js/jquery.min.js")-->
     <script src="../static/js/base.mod.js"></script>
-    <script src="http://10.1.15.50:8000/static/web-goodplay/static/js/base.mod.js"></script>
-    <script>
-      (function(window,undefined){
-        var time = null,
-            $img = $('#bar'),
-            tag =120,
-            max = $('.row').attr('data-max'),
-            cliksize = 0,
-            yes = 0,
-            nb = 0;
-        $('.J_focus').focus();
-        $img.animate({
-            top:355
-          },120000,'linear');
-        time = setInterval(function(){
-          if(tag<=0) return false;
-          tag--;
-          $('.J_countdown').text(tag+'s');
-          if(tag<=0){//超时跳转失败结果
-            location.href='j_03.html';
-          }
-        },1000);
-        $(document).on('click','.grid',function(){
-          var $this = $(this),
-              size  = $('[data-tag=1]').size(),
-              _tag = $this.attr('data-tag'),
-              has = $this.hasClass('no') || $this.hasClass('yes');
-          if(has) return false;
-          if(_tag==1) nb++;
-          cliksize+=1;
-          yes += $this.attr('data-tag')
-          $this.addClass(_tag==1?'yes' : 'no');
-          if(nb==size){//全部正确跳转成功结果
-            location.href='j_02.html';
-            return false;
-          }else if((cliksize>=max) && (nb==size)){//在限制次数内跳转成功结果
-            location.href='j_02.html';
-            return false;
-          }else if((cliksize>=max) && (nb!=size)){//在限制次数内中转失败结果
-            location.href='j_03.html';
-            return false;
-          }
-        });
-      })()
-    </script>
   </body>
 </html>
