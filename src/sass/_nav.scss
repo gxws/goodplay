@@ -1,0 +1,84 @@
+.nav_bx{
+	width:1230px;
+	@include ps(0, 26);
+	.nav,.nav:before,.nav:after{
+		display:inline-block;
+		@include bg('icon_nav_btn', 'png');
+	}
+	.nav{
+		@include bs(66, 60);
+		@include bp(-20, -20);
+		position:relative;
+		margin: 20px 5px 0;
+		&:first-child i{
+			@include bs(80, 40);
+			@include ps(-70, -11);
+			@include bg('new', 'gif');
+		}
+		&:before,&:after{
+			content:"";
+			position:absolute;
+		}
+		&:after{
+			@include bs(66, 60);
+			@include ps(0, 0);
+		}
+		&.announcement{
+			&:after{
+				@include bp(-126, -20);
+			}
+		}
+		&.wallet{
+			&:after{
+				@include bp(-225, -20);
+			}
+		}
+		&.index{
+			&:after{
+				@include bp(-326, -20);
+			}
+		}
+		&.home{
+			&:after{
+				@include bp(-426, -20);
+			}
+		}
+		&.back{
+			&:after{
+				@include bp(-527, -20);
+			}
+		}
+		&:focus{
+			&:before{
+				@include bs(106, 100);
+				@include bp(0, -100);
+				@include ps(-20,-20);
+			}
+			&.announcement{
+				&:after{
+					@include bp(-126, -120);
+				}
+			}
+			&.wallet{
+				&:after{
+					@include bp(-225, -120);
+				}
+			}
+			&.index{
+				&:after{
+					@include bp(-326, -120);
+				}
+			}
+			&.home{
+				&:after{
+					@include bp(-426, -120);
+				}
+			}
+			&.back{
+				&:after{
+					@include bp(-527, -120);
+				}
+			}
+		}
+	}
+}

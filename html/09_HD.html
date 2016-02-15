@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>500-玩赚大咖</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div id="wrap" class="pa wrap result-500 logo">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+            <div class="pa error_text_other tc">{{error}}</div>
+            <div class="pa btn_bx qingbao_state"><a href="{{qingbaourl}}" class="btn btn-action J_focus">其他游戏</a></div>
+            <div class="pa integral">{{integral}}</div>
+		</script>
+	</div>
+
+	<!-- <script src="/build/bundle.js"></script> -->
+	<script src="../static/js/bundle.js"></script>
+	<script>
+		var data = {
+			menu: [
+                {
+                    url: 'javascript:;', //公告url
+                    name: 'announcement'//类名
+                },
+                {
+                    url: 'javascript:;',//钱包url
+                    name: 'wallet'
+                },
+                {
+                    url: 'javascript:;',//主页url
+                    name: 'index'
+                },
+                {
+                    url: 'javascript:;',//首页url
+                    name: 'home'
+                },
+                {
+                    url: 'javascript:;',//返回url
+                    name: 'back'
+                }
+            ],
+            news: 1, //新的公告提示，1有新提示，0没有
+            integral: "4500.00",//右下角账户余额
+            error: '程序猿被本次游戏玩晕了。',//500错误信息
+            homeurl: '#'//首页url
+		}
+        $('#wrap').html(template('nodeData', data));
+	</script>
+</body>
+</html>

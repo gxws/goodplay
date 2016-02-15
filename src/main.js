@@ -1,0 +1,12 @@
+'use strict'
+import './sass/normalize'
+import './sass/public'
+import './sass/base'
+import 'script!jquery'
+import 'script!../../public/js/template'
+import '../../public/js/jquery.j'
+import "babel-polyfill"
+import './js/base'
+// import './sass/base_HD'
+// import $ from 'jquery'
+// import '../static/js/base'

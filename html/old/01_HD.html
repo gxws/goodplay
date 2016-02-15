@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Author" content="jiqingjian">
+    <meta name="Keywords" content="jiqingjian">
+    <meta name="Description" content="jiqingjian">
+    <!-- <link rel="stylesheet" href="../static/css/base.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/base_HD.css"> -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+  </head>
+  <body class="wrap">
+    <div class="header">
+      <div class="pa logo"></div><a href="#" class="pa navbtn navbtn-announcement"><i class="pa new-tag"></i></a><a href="#" class="pa navbtn navbtn-wallet"></a><a href="#" class="pa navbtn navbtn-home"></a><a href="#" class="pa navbtn navbtn-index"></a><a href="#" class="pa navbtn navbtn-back"></a>
+      <!--.pa.date.tc.text-white.J_j_date 2015|8|6|4|23|59|55-->
+      <!--年|月|日|星期|时|分|秒-->
+    </div><a href="#" class="pa joinbtn joinbtn-difference"></a><a href="#" class="pa joinbtn joinbtn-pounds"></a>
+    <div data-text="公告,中奖信息1,中奖信息2,中奖信息3,中奖信息4" class="pa reel text-white"></div>
+    <div class="pa balance text-white">4540.00</div>
+    <!--script(src="../../static/public/js/jquery.min.js")-->
+    <!-- <script src="../static/js/base.mod.js"></script> -->
+    <script src="../../public/js/jquery.min.js"></script>
+    <script src="../static/js/bundle.js"></script>
+    <!-- <script>
+      (function(window,undefined){
+        var $reel = $('.reel'),
+            arr = $reel.attr('data-text').split(','),
+            len = arr.length;
+            tag = 0,
+        $reel.text(arr[tag]);
+        (function time(){
+          setTimeout(function(){
+            if(tag==(len-1)){
+              tag=-1;
+            }
+            tag+=1;
+            $reel.text(arr[tag]);
+            time();
+          },6000)
+        })()
+      })(window)
+    </script> -->
+    <script type="text/javascript">
+      (function(window, undefined){
+        document.onkeydown = function(e){
+        //var e = event || window.event || arguments.callee.caller.arguments[0];
+        //alert(e.keyCode)
+          switch (e.keyCode){
+            case 48:
+              location.reload();
+              break;
+            case 57:
+              location.href="../index.html";
+              break;
+            //- case 8:
+            //-   location.href="index.html";
+            //-   break; 
+          }
+        }
+      })(window)
+    </script>
+  </body>
+</html>

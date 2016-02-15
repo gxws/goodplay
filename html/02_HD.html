@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>公告-玩赚大咖</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div id="wrap" class="pa wrap gonggao logo pgtitle announcement">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+			<a id="prev" href="javascript:;" class="pa pgbtn prev"></a>
+			<div class="pa gonggao_bx auto" id="gonggao_bx"></div>
+			<a id="next" href="javascript:;" class="pa pgbtn next J_focus"></a>
+			<div id="pgnb" class="pa pgnb announcement tc">
+				第
+				<em class="curr"></em>/
+				<em class="total"></em>
+				页
+			</div>
+			<div class="pa integral">{{integral}}</div>
+		</script>
+	</div>
+	<script id="gonggao" type="html/text">
+			{{each list as v i}}
+				{{if i <= 1*row-1}}
+					<div class="pa ad_img">
+						{{if v.imgurl && v.imgurl!=''}}
+							<img src="{{v.imgurl}}"/>
+						{{/if}}
+					</div>
+					<div class="pa text">
+						{{each v.text as tx}}
+							<p>{{tx}}</p>
+						{{/each}}
+					</div>
+				{{/if}}
+			{{/each}}
+	</script>
+	<!-- <script src="/build/bundle.js"></script> -->
+	<script src="../static/js/bundle.js"></script>
+	<script>
+		var data = {
+			menu: [
+				{
+					url: 'javascript:;', //公告url
+					name: 'announcement'//类名
+				},
+				{
+					url: 'javascript:;',//钱包url
+					name: 'wallet'
+				},
+				{
+					url: 'javascript:;',//主页url
+					name: 'index'
+				},
+				{
+					url: 'javascript:;',//首页url
+					name: 'home'
+				},
+				{
+					url: 'javascript:;',//返回url
+					name: 'back'
+				}
+			],
+			news: 1, //新的公告提示，1有新提示，0没有
+			integral: "4500.00",//右下角账户余额
+			list:[//详细公告列表
+					{
+						imgurl: '123123.jpg',//公告图，如没有图片默认显示二维码，CSS定义背景图
+						text: ['快快看过来，现在可以领取红包免费兑换专区咯~！']
+					},
+					{
+						imgurl: '',
+						text: ['2快快看过来，现在可以领取红包免费兑换专区咯~！']
+					},
+					{
+						imgurl: '123123.jpg',
+						text: ['3快快看过来，现在可以领取红包免费兑换专区咯~！']
+					},
+					{
+						imgurl: '123123.jpg',
+						text: ['4快快看过来，现在可以领取红包免费兑换专区咯~！']
+					},
+				],
+		}
+		$('#wrap').html(template('nodeData', data));
+		$.pagination({//公告翻页 前端配置参数
+			pagnbId:"pgnb",//页码容器ID
+			templateId: "gonggao",//模板ID
+			containerId: "gonggao_bx",//容器ID
+			//size: 4,//显示数量
+			//total: 15,//总记录数
+			row: 1,//行数
+			span:1,//每行个数
+			//extra: 8,
+			//other: true,
+			items: data.list //数据
+		});
+	</script>
+</body>
+</html>

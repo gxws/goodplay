@@ -1,11 +1,29 @@
-(function(window,undefined){
-  $('.J_focus').focus();
-  if($('.J_j_date').size()){
+var $reel = $('.reel'),
+    arr = $reel.attr('data-text').split(','),
+    len = arr.length,
+    tag = 0;
+    
+if($reel.size()){
+  $reel.text(arr[tag]);
+  (function time(){
+    setTimeout(function(){
+      if(tag==(len-1)){
+        tag=-1;
+      }
+      tag+=1;
+      $reel.text(arr[tag]);
+      time();
+    },6000)
+  })();
+}
+
+$('.J_focus').focus();
+if($('.J_j_date').size()){
   var _run,
       $date = $('.J_j_date'),
       date  = $date.text().split('|'),
       days  = [31, date[0] % 4 ? 28 : 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-      week  = ["ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","æ—¥"],
+      week  = ["Ò»","¶þ","Èý","ËÄ","Îå","Áù","ÈÕ"],
       min   = [0, 1, 1, 0, 0, 0, 0],
       max   = [9999, 12, days[(+ date[1]) - 1], (date[1] -1), 23, 59, 59];
   (_run = function(){
@@ -14,8 +32,8 @@
   })();
   function getstr(){
     _add(6);
-    // return _zero(date[1]) + 'æœˆ' + _zero(date[2]) + 'æ—¥ ' + _zero(date[3]) + ':' + _zero(date[4]) + ':' + _zero(date[5]);
-    return  _zero(date[1]) + 'æœˆ' + _zero(date[2]) + 'æ—¥ ' + _zero(date[4]) + ':' + _zero(date[5]) + 'æ˜ŸæœŸ' + week[(date[3] -1)];
+    // return _zero(date[1]) + 'ÔÂ' + _zero(date[2]) + 'ÈÕ ' + _zero(date[3]) + ':' + _zero(date[4]) + ':' + _zero(date[5]);
+    return  _zero(date[1]) + 'ÔÂ' + _zero(date[2]) + 'ÈÕ ' + _zero(date[4]) + ':' + _zero(date[5]) + 'ÐÇÆÚ' + week[(date[3] -1)];
   }
   function _zero(n){
     return n < 10 ? '0' + (+ n).toString() : + n;
@@ -49,8 +67,73 @@
 
     },5000);
   }
-})(window)
-init = (function(){
+//})(window)
+if($('.egg').size()){
+  $(document).on('click', '.egg', function(){
+          var $this = $(this),
+              $after = $this.find('.after'),
+              $img = $this.find('img'),
+              time = null,
+              d = 0,
+              tag = $this.attr('data-tag');
+          //$this.addClass('smash');
+          time = setInterval(function(){
+            d+=10;
+            $after.css('transform','rotate(' + (-d) +'deg)');
+            if(d>=40){
+              d = 0;
+              clearInterval(time);
+            }
+          },100);
+          setTimeout(function(){
+            $this.addClass('active');
+            $this.css('z-index','13');
+            time = setInterval(function(){
+              d = 1;
+              d += 2.3;
+              $img.css('transform',' scale('+ d +')');
+              if(d>=2.3){
+                d = 0;
+                clearInterval(time);
+              }
+            },100);
+            //$img.css('transform',' scale(2)');
+              setTimeout(function(){
+                location.href = tag==1 ? 'j_05.html' : 'j_04.html';//³É¹¦URL £¬Ê§°ÜURL
+              },3500);
+          },500);
+        });
+}
+if($('.J_announcement_bx').size()){
+  var index = 0,
+            $em = $('.page-text em');
+        $em.eq(0).text('1')
+        $em.eq(1).text($('.announcement_text').size());
+        function pAge($obj){
+          var $this = $obj,
+              prev  =  $this.hasClass('page-prev'),
+              next  = $this.hasClass('page-next'),
+              $text = $('.announcement_text'),
+              $prev = $text.eq(index).prev(),
+              $next = $text.eq(index).next();
+          if((prev && $prev.size()==0) || (next && $next.size()==0)) return false;
+          $text.eq(index).removeClass('active');
+          index += next ? 1 : -1;
+          $text.eq(index).addClass('active');
+          $em.eq(0).text(index+1);
+        }
+        $(document).on('click','.page',function(){
+          pAge($(this));
+        }).on('keydown', '.page' ,function(e){
+          if(e.keyCode == 37 && $(this).hasClass('page-prev')){
+            pAge($(this));
+          }
+          if(e.keyCode == 39 && $(this).hasClass('page-next')){
+            pAge($(this));
+          }
+        });
+}
+var init = (function(){
       var time = null,
           $img = $('#bar'),
           tag =120,
@@ -63,8 +146,8 @@ init = (function(){
           // failurl = $row.attr('data-failurl'),
           //cliksize = 0,
           yes = 0,
-          nb = 0,//æ­£ç¡®æ¬¡æ•°
-          _nb = 0;//é”™è¯¯æ¬¡æ•°
+          nb = 0,//ÕýÈ·´ÎÊý
+          _nb = 0;//´íÎó´ÎÊý
       if($img.size()){
         $img.animate({
             top:355
@@ -73,7 +156,7 @@ init = (function(){
           if(tag<=0) return false;
           tag--;
           $('.J_countdown').text(tag+'s');
-          if(tag<=0){//è¶…æ—¶è·³è½¬å¤±è´¥ç»“æžœ
+          if(tag<=0){//³¬Ê±Ìø×ªÊ§°Ü½á¹û
             location.href = url + 1;
           }
         },1000);
@@ -87,10 +170,10 @@ init = (function(){
           //cliksize+=1;
           $this.addClass(_tag==1?'yes' : 'no');
           // nb==size ? delay(0) : _nb==failmax ? delay(0) :
-          if(nb==size){//å…¨éƒ¨æ­£ç¡®è·³è½¬æˆåŠŸç»“æžœ
+          if(nb==size){//È«²¿ÕýÈ·Ìø×ª³É¹¦½á¹û
             delay(0)
             return false;
-          }else if(_nb==failmax){//å…¨éƒ¨é”™è¯¯è·³è½¬å¤±è´¥ç»“æžœ
+          }else if(_nb==failmax){//È«²¿´íÎóÌø×ªÊ§°Ü½á¹û
             delay(2)
           }
           function delay(ag){

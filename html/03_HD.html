@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>来找茬游戏说明-玩赚大咖</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div id="wrap" class="pa wrap zaoca_game_description logo">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+			<div class="pa time_nb J_time_nb" data-url="{{gameurl}}">
+            <span></span>
+            </div>
+			<div class="pa btn_bx zaoca_description">
+                <a href="{{gameurl}}" class="btn btn-action">开始游戏</a>
+            </div>
+		</script>
+	</div>
+	<!-- <script src="/build/bundle.js"></script> -->
+	<script src="../static/js/bundle.js"></script>
+	<script>
+		var data = {
+			menu: [
+				{
+					url: 'javascript:;', //公告url
+					name: 'announcement'//类名
+				},
+				{
+					url: 'javascript:;',//钱包url
+					name: 'wallet'
+				},
+				{
+					url: 'javascript:;',//主页url
+					name: 'index'
+				},
+				{
+					url: 'javascript:;',//首页url
+					name: 'home'
+				},
+				{
+					url: 'javascript:;',//返回url
+					name: 'back'
+				}
+			],
+			news: 1, //新的公告提示，1有新提示，0没有
+            gameurl: "04_HD.html"
+
+		}
+		$('#wrap').html(template('nodeData', data));
+	</script>
+</body>
+</html>

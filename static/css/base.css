@@ -1,151 +1,67 @@
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
-  margin: 0;
-  padding: 0;
-}
+/*
+Error: Invalid CSS after "	@include ps(0, 0)": expected "}", was "&:before{"
+        on line 4 of project/web-goodplay/src/sass/_logo.scss
+        from line 2 of project/web-goodplay/src/sass/base.scss
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+1: .logo{
+2: 	position:relative;
+3: 	@include ps(0, 0)
+4: 	&:before{
+5: 		position:absolute;
+6: 		display:block;
+7: 		content:"";
+8: 		@include bs(232,68);
+9: 		@include bg('logo', 'png');
 
-fieldset, img {
-  border: 0;
-}
-
-address, caption, cite, code, dfn, em, th, var {
-  font-style: normal;
-  font-weight: normal;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-caption, th {
-  text-align: left;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
-
-q:before, q:after {
-  content: '';
-}
-
-abbr, acronym {
-  border: 0;
-  font-variant: normal;
-}
-
-sup {
-  vertical-align: text-top;
-}
-
-sub {
-  vertical-align: text-bottom;
-}
-
-input, textarea, select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  *font-size: 100%;
-}
-
-textarea {
-  resize: none;
-}
-
-a, :focus {
-  outline: 0;
-}
-
-a {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
-}
-
-/* html,body */
-html {
-  _text-overflow: ellipsis;
-}
-
-body {
-  font-family: '/9ED1/4F53',simhei;
-  background-color: #fff;
-}
-
-/* position */
-.pa {
-  position: absolute;
-}
-
-.pr {
-  position: relative;
-  zoom: 1;
-}
-
-.lt {
-  left: 0;
-  top: 0;
-}
-
-/* fix */
-.fix {
-  zoom: 1;
-}
-
-.fix:before, .fix:after {
-  content: '';
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  font-size: 0;
-  line-height: 0;
-  width: 0;
-  height: 0;
-}
-
-.fix:after {
-  clear: both;
-}
-
-/* color */
-.text-white {
-  color: #fff;
-}
-
-.text-yellow {
-  color: #ffc800;
-}
-
-.text-gray {
-  color: #aabedc;
-}
-
-.text-red {
-  color: #f00;
-}
-
-/* font */
-.tc {
-  text-align: center;
-}
-
-.tr {
-  text-align: right;
-}
-
-/* float */
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-/*# sourceMappingURL=base.css.map */
+Backtrace:
+project/web-goodplay/src/sass/_logo.scss:4
+project/web-goodplay/src/sass/base.scss:2
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1098:in `expected'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:1093:in `tok!'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:640:in `block'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:632:in `ruleset'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:657:in `block_child'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:647:in `block_contents'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:117:in `stylesheet'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/scss/parser.rb:42:in `parse'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:403:in `_to_tree'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:309:in `to_tree'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/stack.rb:88:in `block in with_import'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/stack.rb:88:in `with_import'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/engine.rb:295:in `render_with_sourcemap'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:410:in `run'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/exec/sass_scss.rb:63:in `process_result'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/exec/base.rb:52:in `parse'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/lib/sass/exec/base.rb:19:in `parse!'
+D:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.15/bin/sass:13:in `<top (required)>'
+D:/Ruby22-x64/bin/sass:23:in `load'
+D:/Ruby22-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"	@include ps(0, 0)\": expected \"}\", was \"&:before{\"\A         on line 4 of project/web-goodplay/src/sass/_logo.scss\A         from line 2 of project/web-goodplay/src/sass/base.scss\A \A 1: .logo{\A 2: 	position:relative;\A 3: 	@include ps(0, 0)\A 4: 	&:before{\A 5: 		position:absolute;\A 6: 		display:block;\A 7: 		content:\"\";\A 8: 		@include bs(232,68);\A 9: 		@include bg('logo', 'png');"; }

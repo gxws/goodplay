@@ -53,6 +53,9 @@
   .logo {
     left: 51px;
     top: 36px;
+    width: 232px;
+    height: 68px;
+    background: url(../images/logo.png) 0 0 no-repeat;
   }
 
   .title {

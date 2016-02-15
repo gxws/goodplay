@@ -1,0 +1,25 @@
+/* html,body */
+html{_text-overflow:ellipsis;font-size:12px;}
+body{font-family:'helvetica neue',helvetica,arial,sans-serif/*,verdana,'\5FAE\8F6F\96C5\9ED1',microsoft yahei,'\5B8B\4F53',simsun*/;}
+a{text-decoration:none}
+a:hover,a:focus{outline:none;}
+/* position */
+.pr{position:relative;zoom:1;}
+.pa{position:absolute;}
+
+/* text-align */
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+
+/* vertical-align */
+.vt{vertical-align:top;}
+.vm{vertical-align:middle;}
+.vb{vertical-align:baseline;}
+
+/* word-break */
+.wbn{word-break:keep-all;white-space:nowrap;}
+.wby{word-break:break-all;word-wrap:break-word;white-space:normal;}
+
+/* auto */
+.auto{overflow:hidden;zoom:1;}

@@ -1,0 +1,43 @@
+.logo{
+	position:relative;
+	@include ps(0, 0)
+	&:before{
+		position:absolute;
+		display:block;
+		content:"";
+		@include bs(232,68);
+		@include bg('logo', 'png');
+		@include ps(51, 36);
+	}
+}
+
+.pgtitle{
+	position:relative;
+	&:after{
+		position:absolute;
+		display:block;
+		content:"";
+		@include bs(200, 40);
+		@include ps(300, 70);
+	}
+	&.announcement{
+		&:after{
+			@include bg('pgtitle_announcement', 'png');
+		}
+	}
+	&.zaoca{
+		&:after{
+			@include bg('pgtitle_zaoca', 'png');
+		}
+	}
+	&.zadan{
+		&:after{
+			@include bg('pgtitle_zadan', 'png');
+		}
+	}
+	&.qianbao{
+		&:after{
+			@include bg('pgtitle_qianbao', 'png');
+		}
+	}
+}

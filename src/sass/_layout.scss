@@ -1,0 +1,31 @@
+.wrap{
+	@include bs(1280, 720);
+	@include bg('bg1');
+	&.gonggao{
+		@include bg('bg2');
+	}
+    &.zaoca_game_description{
+        @include bg('bg3');
+    }
+    &.zaoca_game{
+        @include bg('bg4');
+    }
+    &.zadan_game{
+        @include bg('bg5');
+    }
+    &.qianbao{
+        @include bg('bg6');
+    }
+    &.qingbao_succeed{
+        @include bg('bg7');
+    }
+    &.result-404{
+        @include bg('bg8');
+    }
+    &.result-500{
+        @include bg('bg9');
+    }
+    &.qc{
+        @include bg('bg10');
+    }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>来找茬主页-玩赚大咖</title>
+	<!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+</head>
+<body>
+	<div id="wrap" class="pa wrap zaoca_game logo pgtitle zaoca">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+            <div class="pa integral">{{integral}}</div>
+            <div class="pa zaoca_bx origin" data-ajax="{{ajaxurl}}">
+                <img class="pa" src="{{origin}}">
+            </div>
+            <div class="pa zaoca_bx clone J_clone" data-max="{{actionmax}}">
+                <img class="pa" src="{{origin}}">
+                {{each clone as v i}}
+                    {{if v.imgurl&&v.imgurl!=''}}
+                        <a href="javascript:;" data-tag="1">
+                            <img src="{{v.imgurl}}">
+                        </a>
+                    {{else}}
+                        <a href="javascript:;" data-tag="0"></a>
+                    {{/if}}
+                {{/each}}
+            </div>
+            <div class="pa scroll_bar J_scroll_bar" data-time="{{gametime}}"><em class="pa tr"></em><span class="pa"></span></div>
+            <div class="pa sponsor_info">本次游戏由<span class="J_supplier">{{supplier}}</span>提供<span class="J_offered">{{offered}}</span>积分</div>
+            <div class="pa confirm_bg J_confirm_bg">
+                <div id="confirm_zaoca" class="pa confirm zaoca"></div>
+            </div>
+		</script>
+	</div>
+	<script src="/build/bundle.js"></script>
+	<!-- <script src="../static/js/bundle.js"></script> -->
+	<script>
+		var data = {
+			menu: [
+                {
+                    url: 'javascript:;', //公告url
+                    name: 'announcement'//类名
+                },
+                {
+                    url: 'javascript:;',//钱包url
+                    name: 'wallet'
+                },
+                {
+                    url: 'javascript:;',//主页url
+                    name: 'index'
+                },
+                {
+                    url: 'javascript:;',//首页url
+                    name: 'home'
+                },
+                {
+                    url: 'javascript:;',//返回url
+                    name: 'back'
+                }
+            ],
+            news: 1, //新的公告提示，1有新提示，0没有
+            integral: "4500.00",//右下角账户余额
+            ajaxurl: '../static/ajax.json',//游戏结果请求url
+            origin: '../updata/sj/origin.jpg',//原图url
+            clone: [//只传差异图片，原图为空，根据差异图片数量来判断需要找茬正确数量
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:'../updata/sj/3.jpg'
+                },
+                {
+                    imgurl:'../updata/sj/4.jpg'
+                },
+                {
+                    imgurl:'../updata/sj/5.jpg'
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+                {
+                    imgurl:''
+                },
+            ],
+            supplier: '洁柔纸业', //提供商名称
+            offered: 100,//提供积分数量
+            gametime: 120,//游戏时间 (s)
+            actionmax: 5//操作次数上限
+
+		}
+		$('#wrap').html(template('nodeData', data));
+	</script>
+</body>
+</html>

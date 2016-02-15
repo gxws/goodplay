@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的钱包-玩赚大咖</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div id="wrap" class="pa wrap qianbao logo pgtitle qianbao">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+            <div class="pa current_integral">积分余额：{{integral}}</div>
+            <div class="pa history_integral">历史获得积分总计：{{history}}</div>
+            <div class="pa btn_bx deposit">
+                <a href="{{depositurl}}" class="btn btn-deposit">存入电视账户</a>
+            </div>
+            <div class="pa btn_bx inexp">
+                <a href="javascript:;" class="btn btn-inexp active">收入</a>
+                <a href="javascript:;" class="btn btn-inexp">支出</a>
+            </div>
+            <a id="prev" href="javascript:;" class="pa recordpg prev"></a>
+            <table class="pa record_bx">
+                <tbody id="record_bx"></tbody>
+            </table>
+            <a id="next" href="javascript:;" class="pa recordpg next"></a>
+            <div id="pgnb" class="pa recordnb tr">
+                <em class="curr"></em> /
+                <em class="total"></em>
+            </div>
+            <div class="pa advertisement_bx J_adimg" data-adimg="{{each imgurl as v i}}{{if i==imgurl.length-1}}{{v}}{{else}}{{v}},{{/if}}{{/each}}" data-interval="{{interval}}"><img src="{{imgurl[0]}}" alt=""></div>
+            <div class="pa btn_bx weixin">
+                <a href="{{weixinurl}}" class="btn btn-weixin"></a>
+            </div>
+		</script>
+	</div>
+    <script id="record" type="html/text">
+        {{each list as v i}}
+            {{if i <= 1*row-1}}
+                <tr>
+                    <td>{{v.date}}</td>
+                    {{if v.gamesponsor}}
+                        <td>{{v.gamesponsor}}</td>
+                    {{else}}
+                        <td>存入电视账户</td>
+                    {{/if}}
+                    <td>{{v.integral}}</td>
+                </tr>
+            {{/if}}
+        {{/each}}
+    </script>
+	<!-- <script src="/build/bundle.js"></script> -->
+	<script src="../static/js/bundle.js"></script>
+	<script>
+		var data = {
+			menu: [
+                {
+                    url: 'javascript:;', //公告url
+                    name: 'announcement'//类名
+                },
+                {
+                    url: 'javascript:;',//钱包url
+                    name: 'wallet'
+                },
+                {
+                    url: 'javascript:;',//主页url
+                    name: 'index'
+                },
+                {
+                    url: 'javascript:;',//首页url
+                    name: 'home'
+                },
+                {
+                    url: 'javascript:;',//返回url
+                    name: 'back'
+                }
+            ],
+            news: 1, //新的公告提示，1有新提示，0没有
+            integral: "4500.00",//账户余额
+            history: "15502.00",//历史积分
+            depositurl:"javascript:;",//存入电视钱包url
+            weixinurl: 'javascript:;',//扫描二维码按钮url
+            interval: 6,//广告图切换时间隔（s)
+            income: [//收入记录
+                {
+                    date: '15/06/25 15:43',//日期时间
+                    gamesponsor: '来找茬--洁柔纸业1',//游戏名-提供商名称
+                    integral: 215//提供积分数量，如需要加入单位，值改为字符类型 如：'215积分'
+                },
+                {
+                    date: '15/06/25 15:43',
+                    gamesponsor: '来找茬--洁柔纸业洁柔纸业',
+                    integral: 22
+                },
+                {
+                    date: '15/06/25 15:43',
+                    gamesponsor: '来找茬--洁柔纸业3',
+                    integral: 23666
+                },
+                {
+                    date: '15/06/25 15:43',
+                    gamesponsor: '来找茬--洁柔纸业4',
+                    integral: 24
+                },
+                {
+                    date: '15/06/25 15:43',
+                    gamesponsor: '来找茬--洁柔纸业5',
+                    integral: 25
+                },
+                {
+                    date: '15/06/25 15:43',
+                    gamesponsor: '来找茬--洁柔纸业6',
+                    integral: 26
+                },
+            ],
+            expenditure: [//支出记录（存入电视钱包）
+                {
+                    date: '15/06/25 15:43',//日期时间
+                    integral: 26//存入金额，如需要加入单位，值改为字符类型 如：'26元'
+                },
+                {
+                    date: '15/06/25 15:43',
+                    integral: 36
+                },
+                {
+                    date: '15/06/25 15:43',
+                    integral: 46
+                },
+                {
+                    date: '15/06/25 15:43',
+                    integral: 56
+                },
+                {
+                    date: '15/06/25 15:43',
+                    integral: 66
+                },
+                {
+                    date: '15/06/25 15:43',
+                    integral: 76
+                }
+            ],
+            imgurl:[//广告图片url
+                'http://10.1.15.50:8001/html/fed/web-goodplay/static/images/in_zaoca.png',
+                'https://www.twwebgame.com/kindeditor/attached/image/20140421/20140421230413_80679.jpg',
+                'http://s2.buzzhand.net/uploads/b9/6/301093/14172963925061.jpg',
+                'http://shenmo.wanmei.com/resources/jpg/100817/10041282025569952.jpg',
+                'http://i1.073img.com/140730/9869050_100150_1_lit.jpg',
+                'http://web.52pk.com/uploads/allimg/131125/29-1311251345120-L.jpg',
+                'http://vovo2000.com/images/47912.jpg',
+                'http://www.sucaifengbao.com/uploadfile/photo/meinvtupianbizhi/meinvtupianbizhi_813_071.jpg',
+                'http://i02.cztv.com/hainapic/201403/7/6462965121667524991.jpg',
+                'http://img1.mydrivers.com/img/20140127/a57d74c4ac2d4b3782b8710c4e2f0e0e.jpg',
+                'http://www.sn.xinhuanet.com/1113715742_14190562197101n.jpeg',
+                'http://news.xinhuanet.com/photo/2014-09/15/126985114_14107411862991n.jpg',
+                'http://i4.hunantv.com/p1/20130818/0953152570.jpg',
+                'http://ent.lnd.com.cn/news/attachement/jpg/site1/20131021/001e8c2a383c13ceb89113.jpg',
+                'http://content.52pk.com/files/allimg/070604/0144151.jpg',
+                'http://lh5.googleusercontent.com/-CWbmhNeiP_o/AAAAAAAAAAI/AAAAAAAAABA/a1zdO6uPHsg/photo.jpg',
+                'http://ent.cnr.cn/list/201403/W020140320276738989440.jpg',
+                'http://hdimages.takungpao.com/2013/1204/20131204085640655.jpg',
+                'http://n.sinaimg.cn/transform/20141011/awzunex4156531.jpg',
+                'http://i2.w.yun.hjfile.cn/doc/201405/4a81aceb1ca6494ca5e9de298899c1e4.jpg',
+                'http://www.may-j.com/profile/images/pic.jpg',
+                'http://oriconmusic.qiniudn.com/May%20J.3.jpg'
+            ]
+		}
+		$('#wrap').html(template('nodeData', data));
+        function pagin(d) {//收支记录翻页
+            $.pagination({
+                pagnbId:"pgnb",
+                templateId: "record",//模板ID
+                containerId: "record_bx",//容器ID
+                //size: 4,//显示数量
+                //total: 15,//总记录数
+                row: 5,//行数
+                span:1,//每行个数
+                //extra: 8,
+                //other: true,
+                items: d //数据
+            });
+        }
+        var $ine = $('.btn-inexp');
+        var index = 0;
+        $ine.on('click', function() {
+            var $this = $(this);
+            var tag = $this.hasClass('active');
+            var dat = $(this).index() == 0 ? data.income : data.expenditure;
+            if (tag) return false;
+            $this.addClass('active');
+            $ine.eq(index).removeClass('active');
+            index = $this.index();
+            pagin(dat);
+        });
+        pagin(data.income);
+	</script>
+</body>
+</html>

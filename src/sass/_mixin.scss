@@ -1,0 +1,52 @@
+//mixin
+@mixin ps($left:0, $top:0, $percent:false){//position
+	@if $percent == % {
+		left: $left + $percent;
+		top: $top + $percent;
+	}
+	@else{
+		left: $left + px;
+		top: $top + px;
+	}
+}
+@mixin ba($width:false, $height:false, $pic:false, $suffix:false){
+	display:block;
+	content:"";
+	position:absolute;
+	@if $width && $height{
+		@include bs($width, $height);
+	}
+	@if $pic!=false{
+		@include bg($pic, $suffix);
+	}
+}
+@mixin fs ($size:12){//font-size
+	font-size:$size+px;
+}
+
+@mixin color ($color:#fff){//text-color
+	color:$color;
+}
+
+@mixin bg ($name:'',$suffix:'jpg', $left:0, $top:0, $repeat: no-repeat){//bg
+	background:url(../images/#{$name}.#{$suffix}) $left+px $top+px $repeat;
+}
+
+@mixin bp ($left:0, $top:0, $percent:false){//bg
+	@if $percent == % {
+		background-position:$left + $percent $top + $percent;
+	}
+	@else {
+		background-position:$left+px $top+px;
+	}
+}
+@mixin bs ($width:auto,$height:auto,$percent: false) {//width & height
+	@if $percent == % {
+		width: $width + $percent;
+		height: $height + $percent;
+	}
+	@else {
+		width:$width+px;
+		height:$height+px;
+	}
+}

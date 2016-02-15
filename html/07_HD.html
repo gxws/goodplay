@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>存入结果页-玩赚大咖</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div id="wrap" class="pa wrap qianbao logo pgtitle qingbao_succeed">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+            <div class="pa state_text {{if state}}succeed{{else}}fail{{/if}}">
+                {{if state}}
+                    存入成功！
+                {{else}}
+                    存入失败！
+                {{/if}}
+            </div>
+            <div class="pa state_text_cont">
+                {{if state}}
+                    <p>存入金额：{{deposit}}元</p>
+                    <p>存入时间：{{date}}</p>
+                {{else}}
+                    {{error}}
+                {{/if}}
+            </div>
+            <div class="pa btn_bx qingbao_state"><a href="{{qingbaourl}}" class="btn btn-action J_focus">返回钱包</a></div>
+            <div class="pa integral">{{integral}}</div>
+		</script>
+	</div>
+
+	<!-- <script src="/build/bundle.js"></script> -->
+	<script src="../static/js/bundle.js"></script>
+	<script>
+		var data = {
+			menu: [
+                {
+                    url: 'javascript:;', //公告url
+                    name: 'announcement'//类名
+                },
+                {
+                    url: 'javascript:;',//钱包url
+                    name: 'wallet'
+                },
+                {
+                    url: 'javascript:;',//主页url
+                    name: 'index'
+                },
+                {
+                    url: 'javascript:;',//首页url
+                    name: 'home'
+                },
+                {
+                    url: 'javascript:;',//返回url
+                    name: 'back'
+                }
+            ],
+            news: 1, //新的公告提示，1有新提示，0没有
+            integral: "4500.00",//右下角账户余额
+            state: false, //true 成功 false 失败
+            date: '15/06/25 15:43',//时间日期
+            deposit: '26.00',//金额(元)
+            error: '失败原因',//失败原因
+            qingbaourl: '#'//钱包url
+		}
+        $('#wrap').html(template('nodeData', data));
+	</script>
+</body>
+</html>

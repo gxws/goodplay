@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3砸金蛋主页</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Author" content="jiqingjian">
+    <meta name="Keywords" content="jiqingjian">
+    <meta name="Description" content="jiqingjian">
+    <link rel="stylesheet" href="../static/css/base.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/base_HD.css">
+    <script type="text/javascript">
+      (function(window, undefined){
+        document.onkeydown = function(e){
+        //var e = event || window.event || arguments.callee.caller.arguments[0];
+        //alert(e.keyCode)
+          switch (e.keyCode){
+            case 48:
+              location.reload();
+              break;
+            case 57:
+              location.href="../index.html";
+              break;
+            //- case 8:
+            //-   location.href="index.html";
+            //-   break; 
+          }
+        }
+      })(window)
+    </script>
+  </head>
+  <body class="wrap pounds-game">
+    <div class="header">
+      <div class="pa logo"><img src="../static/images/logo.png"></div>
+      <div class="pa title"><img src="../static/images/pounds_title.png"></div><a href="#" class="pa navbtn navbtn-home"></a><a href="#" class="pa navbtn navbtn-index"></a><a href="#" class="pa navbtn navbtn-back"></a>
+      <!--.pa.date.tc.text-white.J_j_date 2015|8|6|4|23|59|55-->
+      <!--年|月|日|星期|时|分|秒-->
+    </div><a href="#" data-tag="0" class="pa egg egg-yellow"><img src="../static/images/530x400.jpg" width="152" height="115">
+      <div class="pa after"></div></a><a href="#" data-tag="1" class="pa egg egg-green"><img src="../static/images/530x400.jpg" width="152" height="115">
+      <div class="pa after"></div></a><a href="#" data-tag="0" class="pa egg egg-red"><img src="../static/images/530x400.jpg" width="152" height="115">
+      <div class="pa after"></div></a>
+    <div class="pa pounds-game-info">
+       
+      洁柔纸洁<em class="text-red">这里放红色的字</em>提供奖金洁<em class="text-red">这里放红色</em>
+    </div>
+    <div class="pa win-pic"><img src="../static/images/530x400.jpg" width="230" height="173"></div>
+    <div class="pa balance text-white">4540.00</div>
+    <!--script(src="../../static/public/js/jquery.min.js")-->
+    <!-- <script src="../static/js/base.mod.js"></script> -->
+    <script src="../../public/js/jquery.min.js"></script>
+    <script src="../static/js/bundle.js"></script>
+<!--     <script>
+      (function(window,undefined){
+        $(document).on('click', '.egg', function(){
+          var $this = $(this),
+              $after = $this.find('.after'),
+              $img = $this.find('img'),
+              time = null,
+              d = 0,
+              tag = $this.attr('data-tag');
+          //$this.addClass('smash');
+          time = setInterval(function(){
+            d+=10;
+            $after.css('transform','rotate(' + (-d) +'deg)');
+            if(d>=40){
+              d = 0;
+              clearInterval(time);
+            }
+          },100);
+          setTimeout(function(){
+            $this.addClass('active');
+            $this.css('z-index','13');
+            time = setInterval(function(){
+              d = 1;
+              d += 2.3;
+              $img.css('transform',' scale('+ d +')');
+              if(d>=2.3){
+                d = 0;
+                clearInterval(time);
+              }
+            },100);
+            //$img.css('transform',' scale(2)');
+              setTimeout(function(){
+                location.href = tag==1 ? 'j_05.html' : 'j_04.html';//成功URL ，失败URL
+              },3500);
+          },500);
+        });
+      })(window)
+      //- var a = $('.egg');
+      
+      //- a.on("keydown", function(e){
+      //-   e = e || window;
+      //-   console.log(e.keyCode);
+      //-   if(e.keyCode === 13){
+      
+      //-   }
+      //- });
+      
+      //- function tranform(a1, a2){
+      //-   var i = 10;
+      //-   setInterval(function(){
+      //-     transform:rotate((-30 * i)deg);
+      //-   }, a2)
+      //- }
+    </script> -->
+  </body>
+</html>

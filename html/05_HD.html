@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>砸彩蛋主页-玩赚大咖</title>
+	<!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+</head>
+<body>
+	<div id="wrap" class="pa wrap zadan_game logo pgtitle zadan">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+            <div class="pa integral">{{integral}}</div>
+            <div class="pa egg_bx J_egg_bx">
+                {{each egg as v i}}
+                    <a href="javascript:;" class="pa egg {{v.color}} {{if i==0}}J_focus{{/if}}" data-win="{{if v.win&&v.win!=''}}1{{else}}0{{/if}}">
+                        <div class="pa img">
+                            <img src="{{v.imgsrc}}" alt="">
+                        </div>
+                        <div class="hammer"></div>
+                    </a>
+                {{/each}}
+            </div>
+            <div class="pa reference" data-ajax="{{ajaxurl}}">
+                <img src="{{reference}}" alt="">
+            </div>
+            <div class="pa sponsor_info zadan">本次游戏由<span class="J_supplier">{{supplier}}</span>提供<span class="J_offered">{{offered}}</span>积分</div>
+            <div class="pa confirm_bg J_confirm_bg">
+                <div id="confirm_zadan" class="pa confirm zadan"></div>
+            </div>
+		</script>
+	</div>
+	<script src="/build/bundle.js"></script>
+	<!-- <script src="../static/js/bundle.js"></script> -->
+	<script>
+		var data = {
+			menu: [
+                {
+                    url: 'javascript:;', //公告url
+                    name: 'announcement'//类名
+                },
+                {
+                    url: 'javascript:;',//钱包url
+                    name: 'wallet'
+                },
+                {
+                    url: 'javascript:;',//主页url
+                    name: 'index'
+                },
+                {
+                    url: 'javascript:;',//首页url
+                    name: 'home'
+                },
+                {
+                    url: 'javascript:;',//返回url
+                    name: 'back'
+                }
+            ],
+            news: 1, //新的公告提示，1有新提示，0没有
+            integral: "4500.00",//右下角账户余额
+            ajaxurl: '../static/ajax.json',//游戏结果ajaxurl
+            reference: '../updata/sj/origin.jpg', //参照广告图
+            egg: [
+                {
+                    color: 'yellow',//类名，固定
+                    win: true,//中奖标识
+                    imgsrc: '../updata/sj/origin.jpg',//砸蛋后弹出图片
+                },
+                {
+                    color: 'green',
+                    win: false,
+                    imgsrc: '../updata/sj/origin.jpg',
+                },
+                {
+                    color: 'red',
+                    win: false,
+                    imgsrc: '../updata/sj/origin.jpg',
+                }
+            ],
+            supplier: '洁柔纸业',//提供商名称
+            offered: 100,//提供积分数量
+
+		}
+		$('#wrap').html(template('nodeData', data));
+	</script>
+</body>
+</html>

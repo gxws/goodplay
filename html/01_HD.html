@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主页-玩赚大咖</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+	<div id="wrap" class="pa wrap logo">
+		<script id="nodeData" type="text/html">
+			<div class="pa nav_bx tr">
+				{{each menu as v i}}
+					<a href="{{v.url}}" class="nav {{v.name}}">
+						{{if i==0 && news}}
+							<i class="pa"></i>
+						{{/if}}
+					</a>
+				{{/each}}
+			</div>
+			<a href="{{gameurl[0]}}" class="pa game zaoca J_focus"></a>
+			<a href="{{gameurl[1]}}" class="pa game zadan"></a>
+			<div class="pa announcement_bx J_announcement_bx auto" data-text="{{announcement}}"><span></span></div>
+			<div class="pa integral">{{integral}}</div>
+		</script>
+	</div>
+	<!-- <script src="/build/bundle.js"></script> -->
+	<script src="../static/js/bundle.js"></script>
+	<script>
+		var data = {
+			menu: [
+				{
+					url: 'javascript:;', //公告url
+					name: 'announcement'//类名
+				},
+				{
+					url: 'javascript:;',//钱包url
+					name: 'wallet'
+				},
+				{
+					url: 'javascript:;',//主页url
+					name: 'index'
+				},
+				{
+					url: 'javascript:;',//首页url
+					name: 'home'
+				},
+				{
+					url: 'javascript:;',//返回url
+					name: 'back'
+				}
+			],
+			news: 1, //新的公告提示，1有新提示，0没有
+			integral: "4500.00",//右下角账户余额
+			gameurl:['04_HD.html', '05_HD.html'],//游戏url,[找茬，砸蛋]
+			announcement: '公告1,公告2,公告3,公告4,公告5,公告6,公告7,公告8'//首页滚动公告，多条公告用英文逗号隔开
+		}
+		$('#wrap').html(template('nodeData', data));//模板渲染
+	</script>
+</body>
+</html>
