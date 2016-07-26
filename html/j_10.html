@@ -36,7 +36,7 @@
       <!--年|月|日|星期|时|分|秒-->
     </div>
     <div class="pa balance-info">
-      <div class="number">口袋余额：4540.00元</div>
+      <div class="number">口袋余额：<span id="Amount">4540.00</span>元</div>
       <div class="history">历史获得奖金总计 15502.00元</div>
     </div><a href="#" class="pa btn deposit">存入电视账户</a><a href="#" class="pa inout-btn income active">收入</a><a href="#" class="pa inout-btn expend">支出</a>
     <!--.pa.record-list-->
@@ -100,6 +100,12 @@
     <script src="../../static/public/js/jquery.min.js"></script>
     <script src="../static/js/base.js"></script>
     <script>
+      window.onload=function(){
+        var Amount=document.getElementById("Amount");
+        if(Amount.innerHTML<500){
+          document.querySelector(".deposit").style.display="none";
+        }
+      }
       (function(window,undefined){
         var $row = $('.row'),
             size = $row.size(),
